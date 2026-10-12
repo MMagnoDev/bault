@@ -153,36 +153,39 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    prevBtn.addEventListener("click", () => showSlide(currentSlide - 1));
-    nextBtn.addEventListener("click", () => showSlide(currentSlide + 1));
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener("click", () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener("click", () => showSlide(currentSlide + 1));
+    }
 
-    dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => showSlide(i));
-    });
+    if (dots.length > 0) {
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => showSlide(i));
+        });
+    }
 
     // Touch Swipe suporte para mobile no carrossel de depoimentos
     let startX = 0;
     const sliderContainer = document.querySelector(".testimonial-slider-container");
 
-    sliderContainer.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-    }, { passive: true });
+    if (sliderContainer) {
+        sliderContainer.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
 
-    sliderContainer.addEventListener("touchend", (e) => {
-        const endX = e.changedTouches[0].clientX;
-        const diffX = startX - endX;
+        sliderContainer.addEventListener("touchend", (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
 
-        if (Math.abs(diffX) > 50) {
-            if (diffX > 0) {
-                // Swipe Left (Proximo)
-                showSlide(currentSlide + 1);
-            } else {
-                // Swipe Right (Anterior)
-                showSlide(currentSlide - 1);
+            if (Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    showSlide(currentSlide + 1);
+                } else {
+                    showSlide(currentSlide - 1);
+                }
             }
-        }
-    }, { passive: true });
-
+        }, { passive: true });
+    }
 
     /* ==========================================================================
        FORMULÁRIO DE CONTATO (SIMULADO)
@@ -190,41 +193,85 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
     const formFeedback = document.getElementById("formFeedback");
 
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        
-        // Simulação de envio com feedback visual elegante
-        formFeedback.textContent = "Enviando mensagem...";
-        formFeedback.className = "form-feedback";
-        formFeedback.style.display = "block";
+    if (contactForm && formFeedback) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            formFeedback.textContent = "Enviando mensagem...";
+            formFeedback.className = "form-feedback";
+            formFeedback.style.display = "block";
 
-        setTimeout(() => {
-            formFeedback.textContent = "Obrigado! Sua mensagem foi enviada com sucesso.";
-            formFeedback.className = "form-feedback success";
-            contactForm.reset();
-        }, 1200);
-    });
+            setTimeout(() => {
+                formFeedback.textContent = "Obrigado! Sua mensagem foi enviada com sucesso.";
+                formFeedback.className = "form-feedback success";
+                contactForm.reset();
+            }, 1200);
+        });
+    }
 
     /* ==========================================================================
-       ANIMAÇÃO DE SCROLL (INTERSECTION OBSERVER)
+       REVEAL ON SCROLL (INTERSECTION OBSERVER)
        ========================================================================== */
     const observerOptions = {
         root: null,
-        rootMargin: "0px",
-        threshold: 0.1
+        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.08
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
-                observer.unobserve(entry.target); // Animado apenas uma vez
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll(".fade-in-up, .fade-in, .fade-in-left, .fade-in-right");
+    const animatedElements = document.querySelectorAll(
+        ".fade-in-up, .fade-in, .fade-in-left, .fade-in-right, .reveal, .entregamos-box, .service-item, .audience-card, .step-item, .service-detail-item"
+    );
+
     animatedElements.forEach(el => {
-        observer.observe(el);
+        // Garantir suporte a delay via inline style
+        if (el.style.animationDelay && !el.style.transitionDelay) {
+            el.style.transitionDelay = el.style.animationDelay;
+        }
+        revealObserver.observe(el);
     });
+
+    /* ==========================================================================
+       PARALLAX (IMAGENS COM data-parallax)
+       ========================================================================== */
+    const parallaxImages = document.querySelectorAll("[data-parallax]");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (parallaxImages.length && !reduceMotion) {
+        let ticking = false;
+
+        const updateParallax = () => {
+            const vh = window.innerHeight;
+            parallaxImages.forEach(img => {
+                const frame = img.parentElement.getBoundingClientRect();
+                // Ignora quando fora da tela
+                if (frame.bottom < 0 || frame.top > vh) return;
+                const speed = parseFloat(img.dataset.parallax) || 0.18;
+                // -1 (entrando por baixo) → 0 (centro da tela) → 1 (saindo por cima)
+                const progress = (frame.top + frame.height / 2 - vh / 2) / (vh / 2 + frame.height / 2);
+                const offset = -progress * frame.height * speed;
+                img.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
+            });
+            ticking = false;
+        };
+
+        const requestUpdate = () => {
+            if (!ticking) {
+                ticking = true;
+                requestAnimationFrame(updateParallax);
+            }
+        };
+
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", requestUpdate);
+        updateParallax();
+    }
 });

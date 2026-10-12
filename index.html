@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brick Arquitetura | Design e Projetos Contemporâneos</title>
+    <title>Bault Engenharia | Diagnóstico Técnico, Laudos e Perícias</title>
     <meta name="description"
-        content="A Brick Arquitetura cria espaços inovadores e funcionais através de projetos residenciais, comerciais e interiores de alto padrão, unindo estética, sustentabilidade e sofisticação.">
+        content="Segurança e diagnóstico técnico do estado real de edificações em todo o Mato Grosso do Sul. Laudos de vistoria, perícias técnicas, diagnóstico de patologias e avaliação NBR 14653.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -24,16 +24,18 @@
     <header class="main-header" id="header">
         <div class="header-container">
             <nav class="nav-menu nav-left">
-                <a href="#projetos" class="nav-link">Projetos</a>
-                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#hero" class="nav-link">Início</a>
+                <a href="servicos.html" class="nav-link">Serviços</a>
             </nav>
 
             <div class="logo-container">
-                <a href="#hero" class="logo">BRICK</a>
+                <a href="index.html" class="logo" aria-label="Bault Engenharia">
+                    <img src="img/logotipo.webp" alt="Bault Engenharia" class="logo-img">
+                </a>
             </div>
 
             <nav class="nav-menu nav-right">
-                <a href="#como-trabalhamos" class="nav-link">Sobre Nós</a>
+                <a href="sobre.html" class="nav-link">Sobre Nós</a>
                 <a href="#contato" class="nav-link">Contato</a>
             </nav>
 
@@ -49,11 +51,12 @@
     <div class="mobile-nav-panel" id="mobilePanel" aria-hidden="true">
         <button class="mobile-menu-close" aria-label="Fechar menu" id="closeBtn">&times;</button>
         <nav class="mobile-menu-links">
-            <a href="#hero" class="mobile-link">Início</a>
+            <a href="index.html" class="mobile-link">Início</a>
+            <a href="#entregamos" class="mobile-link">O que Entregamos</a>
             <a href="#atuacao" class="mobile-link">Atuação</a>
-            <a href="#servicos" class="mobile-link">Serviços</a>
-            <a href="#projetos" class="mobile-link">Projetos</a>
-            <a href="#como-trabalhamos" class="mobile-link">Sobre nós</a>
+            <a href="servicos.html" class="mobile-link">Serviços</a>
+            <a href="#publico" class="mobile-link">Para Quem</a>
+            <a href="sobre.html" class="mobile-link">Sobre Nós</a>
             <a href="#contato" class="mobile-link">Contato</a>
         </nav>
     </div>
@@ -62,16 +65,49 @@
     <section class="hero-section" id="hero">
         <div class="hero-container">
             <div class="hero-col-left fade-in-left">
-                <h1 class="hero-title">Arquitetura autoral, funcional e sustentável.</h1>
+                <h1 class="hero-title">Segurança e diagnóstico técnico do estado real de uma edificação.</h1>
                 <p class="hero-paragraph">
-                    Desenvolvemos projetos residenciais, comerciais e de interiores de alto padrão. Unimos estética, 
-                    sensibilidade e rigor técnico para criar espaços únicos que traduzem a sua identidade.
+                    Substitua a incerteza por uma resposta técnica, documentada e defensável. Laudos de vistoria,
+                    diagnóstico de patologias construtivas e perícias com rigor técnico e respaldo legal em todo o Mato Grosso do Sul.
                 </p>
-                <a href="#projetos" class="btn-outline">Ver Projetos</a>
+                <div class="hero-cta-group">
+                    <a href="servicos.html" class="btn-outline">Conheça os Serviços</a>
+                    <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" class="btn-outline btn-whatsapp">
+                        Falar no WhatsApp
+                    </a>
+                </div>
             </div>
             <div class="hero-col-right fade-in-right">
-                <img src="img/hero.png" alt="Residência moderna contemporânea minimalista"
+                <img src="img/img/rachadura.webp" alt="Diagnóstico técnico de fissuras e patologias estruturais com fissurômetro"
                     class="hero-image" fetchpriority="high">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: O Que Entregamos (Fiel ao Briefing Visual) -->
+    <section class="entregamos-section" id="entregamos">
+        <div class="entregamos-container">
+            <div class="entregamos-header-line fade-in-up">
+                <h2 class="entregamos-title">O que entregamos</h2>
+                <div class="entregamos-line"></div>
+            </div>
+
+            <div class="entregamos-list">
+                <div class="entregamos-box reveal" style="transition-delay: 60ms;">
+                    <p class="entregamos-box-text">Melhoria da qualidade construtiva</p>
+                </div>
+                <div class="entregamos-box reveal" style="transition-delay: 130ms;">
+                    <p class="entregamos-box-text">Processos claros e organizados</p>
+                </div>
+                <div class="entregamos-box reveal" style="transition-delay: 200ms;">
+                    <p class="entregamos-box-text">Apuração de responsabilidade técnica</p>
+                </div>
+                <div class="entregamos-box reveal" style="transition-delay: 270ms;">
+                    <p class="entregamos-box-text">Avaliação de impacto técnico e financeiro</p>
+                </div>
+                <div class="entregamos-box reveal" style="transition-delay: 340ms;">
+                    <p class="entregamos-box-text">Indicação do procedimento correto (reparo, manutenção ou correção)</p>
+                </div>
             </div>
         </div>
     </section>
@@ -81,52 +117,54 @@
         <div class="section-container">
             <div class="section-header text-center fade-in-up">
                 <h2 class="section-title">Áreas de Atuação</h2>
+                <p class="section-subtitle">Engenharia diagnóstica com método rigoroso, embasamento normativo e independência profissional.</p>
             </div>
 
             <div class="acting-grid">
                 <!-- Atuação 1 -->
                 <div class="acting-card fade-in-up" style="animation-delay: 100ms;">
                     <div class="acting-img-wrapper">
-                        <img src="img/05617681-054a-49fb-9405-b0c81363983d.png" alt="Projetos Residenciais Premium"
+                        <img src="img/img/goteira.webp" alt="Laudos de Vistoria de Imóveis"
                             loading="lazy">
                     </div>
-                    <h3 class="acting-card-title">Arquitetura Residencial</h3>
-                    <p class="acting-card-text">Projetos de casas contemporâneas sob medida, integrando estética e bem-estar.</p>
+                    <h3 class="acting-card-title">Laudos de Vistoria</h3>
+                    <p class="acting-card-text">Vistorias cautelares de vizinhança, vistoria de entrega de obra e pré-compra de imóvel com registro técnico minucioso.</p>
                 </div>
 
                 <!-- Atuação 2 -->
                 <div class="acting-card fade-in-up" style="animation-delay: 200ms;">
                     <div class="acting-img-wrapper">
-                        <img src="img/133772d9-b58f-4689-aaf5-a68f2f0f6eba.png" alt="Arquitetura Comercial e Corporativa"
+                        <img src="img/img/infiltracao.webp" alt="Diagnóstico de patologias construtivas e infiltrações com medidor eletrônico"
                             loading="lazy">
                     </div>
-                    <h3 class="acting-card-title">Arquitetura Comercial</h3>
-                    <p class="acting-card-text">Espaços corporativos e comerciais inovadores que potencializam negócios.</p>
+                    <h3 class="acting-card-title">Diagnóstico de Patologias</h3>
+                    <p class="acting-card-text">Identificação da causa raiz de fissuras, infiltrações, eflorescências, corrosão de armadura e recalque de fundação.</p>
                 </div>
 
                 <!-- Atuação 3 -->
                 <div class="acting-card fade-in-up" style="animation-delay: 300ms;">
                     <div class="acting-img-wrapper">
-                        <img src="img/37567f57-6189-4aa3-8773-cbe69f983a56.png" alt="Design de Interiores Residencial e Comercial" loading="lazy">
+                        <img src="img/img/escritorio.webp" alt="Perícia Técnica e Avaliação NBR 14653" loading="lazy">
                     </div>
-                    <h3 class="acting-card-title">Design de Interiores</h3>
-                    <p class="acting-card-text">Layouts funcionais, iluminação cênica e curadoria cuidadosa de materiais e mobiliário.</p>
+                    <h3 class="acting-card-title">Perícia & Consultoria</h3>
+                    <p class="acting-card-text">Perícias judiciais e extrajudiciais com valor probatório, auditoria de obras e avaliação imobiliária pela NBR 14653.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Banner Institucional -->
+    <!-- Banner Institucional (Transformação do Cliente) -->
     <section class="banner-section">
         <div class="banner-image-container">
-            <img src="img/742030ca-5e2c-4568-94b0-fd867479fbeb.png" alt="Esboço arquitetônico e detalhamento técnico"
-                class="banner-bg-img" loading="lazy">
+            <div class="banner-media">
+                <img src="img/img/fachada.webp" alt="Engenharia civil diagnóstica com respaldo técnico e jurídico"
+                    class="banner-bg-img" data-parallax="0.18" loading="lazy">
+            </div>
             <div class="banner-overlay-box fade-in-up">
-                <h2 class="banner-box-title">Arquitetura com sensibilidade em cada detalhe.</h2>
-                <p class="banner-box-text">Do primeiro traço ao acompanhamento final, unimos estética, funcionalidade e técnica 
-                    para projetar espaços significativos e atemporais.</p>
-                <a href="#como-trabalhamos" class="banner-link">
-                    <span>Saiba Mais</span>
+                <h2 class="banner-box-title">Técnica a serviço de uma decisão que, sem ela, seria tomada no escuro.</h2>
+                <p class="banner-box-text">O cliente troca a incerteza ("essa rachadura é grave?", "esse imóvel esconde algum problema estrutural?") por uma resposta técnica, documentada e defensável para negociar, litigar, reformar ou simplesmente dormir tranquilo.</p>
+                <a href="sobre.html" class="banner-link">
+                    <span>Conheça a Bault</span>
                     <svg class="arrow-icon" width="18" height="12" viewBox="0 0 18 12" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.5 1L17.5 6M17.5 6L12.5 11M17.5 6H0.5" stroke="currentColor" stroke-width="1.5"
@@ -141,24 +179,23 @@
     <section class="services-section dark-bg" id="servicos">
         <div class="section-container">
             <div class="section-header text-center fade-in-up">
-                <h2 class="section-title">Nossos Serviços</h2>
-                <p class="section-subtitle">Desenvolvemos soluções completas para todas as etapas do seu projeto, do conceito ao acompanhamento final.</p>
+                <h2 class="section-title">O que a Bault Vende</h2>
+                <p class="section-subtitle">Segurança técnica fundamentada para proteger seu patrimônio, dirimir litígios e respaldar decisões críticas.</p>
             </div>
 
             <div class="services-grid">
                 <!-- Serviço 1 -->
                 <div class="service-item fade-in-up" style="animation-delay: 100ms;">
                     <div class="service-icon-wrapper">
-                        <!-- Icon: Structural / Design -->
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3 21H21M5 21V6C5 4.89543 5.89543 4 7 4H17C18.1046 4 19 4.89543 19 6V21M9 8H15M9 12H15M9 16H15"
                                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3 class="service-item-title">Estudo Preliminar & Conceito</h3>
-                    <p class="service-item-desc">Análise de viabilidade do terreno, insolação, zoneamento urbano e desenvolvimento de volumetria tridimensional e plantas de layout.</p>
-                    <a href="#contato" class="service-link">
+                    <h3 class="service-item-title">Laudos de Vistoria</h3>
+                    <p class="service-item-desc">Vistoria cautelar de vizinhança, vistoria de entrega de obra e pré-compra de imóvel. Documentação comprobatória com registro fotográfico e análise técnica.</p>
+                    <a href="servicos.html" class="service-link">
                         <span>Saiba mais</span>
                         <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
@@ -170,16 +207,15 @@
                 <!-- Serviço 2 -->
                 <div class="service-item fade-in-up" style="animation-delay: 200ms;">
                     <div class="service-icon-wrapper">
-                        <!-- Icon: Management / Planning -->
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M8 7V3M16 7V3M3 11H21M5 5H19C20.1046 5 21 5.89543 21 7V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V7C3 5.89543 3.89543 5 5 5Z"
+                                d="M12 9V14M12 17.5V18M10.29 3.86L1.82 18A2 2 0 003.55 21H20.45A2 2 0 0022.18 18L13.71 3.86A2 2 0 0010.29 3.86Z"
                                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3 class="service-item-title">Projeto Executivo Arquitetônico</h3>
-                    <p class="service-item-desc">Elaboração de todo o caderno de desenhos técnicos detalhados, plantas, cortes, fachadas e especificações para aprovação e execução.</p>
-                    <a href="#contato" class="service-link">
+                    <h3 class="service-item-title">Diagnóstico de Patologias</h3>
+                    <p class="service-item-desc">Apuração precisa de fissuras, infiltrações, eflorescências, corrosão de armaduras e recalques de fundação com indicação da conduta técnica correta.</p>
+                    <a href="servicos.html" class="service-link">
                         <span>Saiba mais</span>
                         <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
@@ -191,16 +227,15 @@
                 <!-- Serviço 3 -->
                 <div class="service-item fade-in-up" style="animation-delay: 300ms;">
                     <div class="service-icon-wrapper">
-                        <!-- Icon: Inspection / Document -->
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M9 12H15M9 16H13M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H14L19 8V19C19 20.1046 18.1046 21 17 21Z"
                                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3 class="service-item-title">Design de Interiores & Curadoria</h3>
-                    <p class="service-item-desc">Detalhamento completo de marcenaria, paginação de pisos/revestimentos, projeto luminotécnico e curadoria refinada de móveis e decorações.</p>
-                    <a href="#contato" class="service-link">
+                    <h3 class="service-item-title">Perícia Técnica & Seguros</h3>
+                    <p class="service-item-desc">Investigação técnica com valor probatório para fins judiciais, extrajudiciais, seguradoras e suporte pericial aos escritórios de advocacia.</p>
+                    <a href="servicos.html" class="service-link">
                         <span>Saiba mais</span>
                         <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
@@ -212,16 +247,15 @@
                 <!-- Serviço 4 -->
                 <div class="service-item fade-in-up" style="animation-delay: 400ms;">
                     <div class="service-icon-wrapper">
-                        <!-- Icon: Consulting / Analytics -->
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M9.663 17H14.337M12 3V5M12 19V21M21 12H19M5 12H3M18.364 5.636L16.95 7.05M7.05 16.95L5.636 18.364M18.364 18.364L16.95 16.95M7.05 7.05L5.636 5.636"
+                                d="M9 11L12 14L22 4M21 12V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16"
                                 stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3 class="service-item-title">Acompanhamento de Obras</h3>
-                    <p class="service-item-desc">Visitas técnicas programadas e assessoria estética no canteiro de obras, garantindo fidelidade absoluta do construído ao projeto original.</p>
-                    <a href="#contato" class="service-link">
+                    <h3 class="service-item-title">Consultoria, Auditoria & NBR 14653</h3>
+                    <p class="service-item-desc">Consultoria técnica para construtoras e incorporadoras, auditoria documental de obras e avaliação técnica patrimonial de imóveis.</p>
+                    <a href="servicos.html" class="service-link">
                         <span>Saiba mais</span>
                         <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
@@ -233,83 +267,127 @@
         </div>
     </section>
 
-    <!-- Projetos Recentes -->
-    <section class="projects-section light-bg" id="projetos">
+    <!-- Para Quem Entregamos -->
+    <section class="projects-section light-bg" id="publico">
         <div class="section-container">
             <div class="section-header text-center fade-in-up">
-                <h2 class="section-title text-dark">Projetos Recentes</h2>
-                <p class="section-subtitle text-dark-sec">Conheça alguns dos projetos que criamos com foco em design, sofisticação e conforto.</p>
+                <h2 class="section-title text-dark">Para Quem Entregamos</h2>
+                <p class="section-subtitle text-dark-sec">Soluções de engenharia diagnóstica personalizadas para cada perfil de tomada de decisão.</p>
             </div>
 
-            <!-- Filtros de Categoria -->
-            <div class="projects-filters fade-in-up">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="residencial">Residenciais</button>
-                <button class="filter-btn" data-filter="comercial">Comerciais</button>
-                <button class="filter-btn" data-filter="interiores">Interiores</button>
-            </div>
-
-            <!-- Galeria de Projetos -->
-            <div class="projects-grid">
-                <!-- Projeto 1 -->
-                <div class="project-card fade-in-up" data-category="residencial">
-                    <div class="project-img-wrapper">
-                        <img src="img/8e744e95-5c30-4a12-b3a2-2b3cee2e18dd.png" alt="Residência MM - Fachada contemporânea"
-                            loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h4 class="project-name">Residência MM</h4>
-                        <span class="project-cat">Residencial</span>
-                    </div>
+            <!-- Grid de Públicos -->
+            <div class="audience-grid">
+                <!-- Público 1 -->
+                <div class="audience-card reveal" style="transition-delay: 60ms;">
+                    <h4 class="audience-card-title">Proprietários de Imóveis</h4>
+                    <p class="audience-card-desc">Segurança antes de comprar, vender ou reformar. Esclarecemos se trincas e infiltrações representam riscos e fornecemos laudos defensáveis.</p>
                 </div>
 
-                <!-- Projeto 2 -->
-                <div class="project-card fade-in-up" data-category="comercial" style="animation-delay: 150ms;">
-                    <div class="project-img-wrapper">
-                        <img src="img/37567f57-6189-4aa3-8773-cbe69f983a56.png" alt="Sede Corporativa - Arquitetura corporativa moderna" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h4 class="project-name">Sede Corporativa</h4>
-                        <span class="project-cat">Comercial</span>
-                    </div>
+                <!-- Público 2 -->
+                <div class="audience-card reveal" style="transition-delay: 130ms;">
+                    <h4 class="audience-card-title">Construtoras & Incorporadoras</h4>
+                    <p class="audience-card-desc">Consultoria preventiva durante e após a obra, auditoria documental de conformidade e blindagem técnica contra passivos futuros.</p>
                 </div>
 
-                <!-- Projeto 3 -->
-                <div class="project-card fade-in-up" data-category="interiores" style="animation-delay: 300ms;">
-                    <div class="project-img-wrapper">
-                        <img src="img/05617681-054a-49fb-9405-b0c81363983d.png"
-                            alt="Loft Jardins - Design de interiores contemporâneo" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h4 class="project-name">Loft Jardins</h4>
-                        <span class="project-cat">Interiores</span>
-                    </div>
+                <!-- Público 3 -->
+                <div class="audience-card reveal" style="transition-delay: 200ms;">
+                    <h4 class="audience-card-title">Síndicos & Condomínios</h4>
+                    <p class="audience-card-desc">Inspeção predial preventiva, laudos de recebimento de áreas comuns e pareceres técnicos para acionar garantias de construtoras.</p>
                 </div>
-            </div>
 
-            <!-- Botão Ver Todos -->
-            <div class="projects-actions text-center fade-in-up">
-                <a href="#contato" class="btn-dark-outline">Ver Todos os Projetos</a>
+                <!-- Público 4 -->
+                <div class="audience-card reveal" style="transition-delay: 270ms;">
+                    <h4 class="audience-card-title">Escritórios de Advocacia</h4>
+                    <p class="audience-card-desc">Assistência técnica pericial, formulação de quesitos, impugnações e laudos com alto valor probatório em processos cíveis e cautelares.</p>
+                </div>
+
+                <!-- Público 5 -->
+                <div class="audience-card reveal" style="transition-delay: 340ms;">
+                    <h4 class="audience-card-title">Seguradoras</h4>
+                    <p class="audience-card-desc">Vistorias prévias de risco e regulação técnica de sinistros em edificações, com apuração de nexo causal e responsabilidade.</p>
+                </div>
+
+                <!-- Card de Chamada Direta -->
+                <div class="audience-card reveal" style="transition-delay: 410ms; background-color: var(--color-charcoal); border-color: transparent;">
+                    <h4 class="audience-card-title" style="color: #FFFFFF;">Fale Diretamente Conosco</h4>
+                    <p class="audience-card-desc" style="color: #A1A1AA;">Envie sua demanda para análise inicial e receba uma orientação técnica personalizada com a Eng.ª Camila.</p>
+                    <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" style="color: #E4E4E7; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-top: auto; display: inline-flex; align-items: center; gap: 8px;">
+                        Chamar no WhatsApp <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Como Trabalhamos -->
+    <!-- Casos Atendidos -->
+    <section class="projects-section light-bg-accent" id="casos">
+        <div class="section-container">
+            <div class="section-header text-center fade-in-up">
+                <h2 class="section-title text-dark">Demandas Frequentes</h2>
+                <p class="section-subtitle text-dark-sec">Exemplos práticos de atuações realizadas com precisão técnica e segurança jurídica.</p>
+            </div>
+
+            <!-- Galeria de Casos -->
+            <div class="projects-grid">
+                <!-- Caso 1 -->
+                <div class="project-card fade-in-up" data-category="vistoria">
+                    <div class="project-img-wrapper">
+                        <img src="img/img/inspecao.webp" alt="Vistoria Cautelar de Vizinhança e Inspeção Predial"
+                            loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h4 class="project-name">Vistoria Cautelar de Vizinhança</h4>
+                        <span class="project-cat">Proteção contra danos de obras vizinhas</span>
+                    </div>
+                </div>
+
+                <!-- Caso 2 -->
+                <div class="project-card fade-in-up" data-category="pericia" style="animation-delay: 150ms;">
+                    <div class="project-img-wrapper">
+                        <img src="img/img/infiltracao.webp" alt="Perícia em Manifestações Patológicas" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h4 class="project-name">Diagnóstico de Fissuras & Infiltrações</h4>
+                        <span class="project-cat">Apuração de causa raiz e responsabilidade</span>
+                    </div>
+                </div>
+
+                <!-- Caso 3 -->
+                <div class="project-card fade-in-up" data-category="inspecao" style="animation-delay: 300ms;">
+                    <div class="project-img-wrapper">
+                        <img src="img/img/clean.webp"
+                            alt="Inspeção Predial e Entrega de Obra" loading="lazy">
+                    </div>
+                    <div class="project-info">
+                        <h4 class="project-name">Vistoria de Entrega de Obra</h4>
+                        <span class="project-cat">Conformidade e recebimento de edificação</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão Solicitar -->
+            <div class="projects-actions text-center fade-in-up">
+                <a href="#contato" class="btn-dark-outline">Solicitar Diagnóstico Técnico</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa Metodologia -->
     <section class="how-we-work dark-bg" id="como-trabalhamos">
         <div class="section-container">
             <div class="work-grid">
                 <!-- Coluna Esquerda: Metodologia -->
                 <div class="work-col-left fade-in-left">
-                    <h2 class="section-title">Como Trabalhamos</h2>
-                    <p class="work-intro-text">Combinamos sensibilidade artística e precisão técnica para materializar o espaço dos seus sonhos.</p>
+                    <h2 class="section-title">Nossa Metodologia</h2>
+                    <p class="work-intro-text">Combinamos fundamentação normativa, investigação técnica in loco e independência profissional para entregar laudos irrefutáveis.</p>
 
                     <div class="steps-list">
                         <!-- Step 01 -->
                         <div class="step-item">
                             <span class="step-num">01</span>
                             <div class="step-content">
-                                <h4 class="step-title">Briefing & Alinhamento</h4>
-                                <p class="step-desc">Mapeamento inicial de desejos, rotina dos usuários, orçamento disponível e estudo preliminar das condições do terreno ou imóvel.</p>
+                                <h4 class="step-title">Contato & Triagem Técnica</h4>
+                                <p class="step-desc">Análise inicial da demanda, histórico do imóvel, levantamento documental e definição precisa do escopo técnico aplicável.</p>
                             </div>
                         </div>
 
@@ -317,8 +395,8 @@
                         <div class="step-item">
                             <span class="step-num">02</span>
                             <div class="step-content">
-                                <h4 class="step-title">Conceito & Estudo 3D</h4>
-                                <p class="step-desc">Desenvolvimento de propostas de layout, paleta de materiais, estudo volumétrico e imagens 3D realistas para perfeita compreensão visual.</p>
+                                <h4 class="step-title">Vistoria in Loco & Ensaios</h4>
+                                <p class="step-desc">Inspeção presencial com registro fotográfico de alta precisão, mapeamento de anomalias e coleta de dados físicos da edificação.</p>
                             </div>
                         </div>
 
@@ -326,8 +404,8 @@
                         <div class="step-item">
                             <span class="step-num">03</span>
                             <div class="step-content">
-                                <h4 class="step-title">Projeto Executivo</h4>
-                                <p class="step-desc">Elaboração de toda a documentação de obra: caderno de plantas, marcenaria detalhada, iluminação, paginação e especificações técnicas.</p>
+                                <h4 class="step-title">Elaboração do Laudo Pericial</h4>
+                                <p class="step-desc">Redação fundamentada nas NBRs (incluindo NBR 14653 quando aplicável), determinação de nexo causal e parecer técnico defensável.</p>
                             </div>
                         </div>
 
@@ -335,8 +413,8 @@
                         <div class="step-item">
                             <span class="step-num">04</span>
                             <div class="step-content">
-                                <h4 class="step-title">Acompanhamento & Curadoria</h4>
-                                <p class="step-desc">Visitas programadas à obra para conferência técnica de paginações e acabamentos, concluindo com a curadoria de mobiliário e objetos decorativos.</p>
+                                <h4 class="step-title">Entrega com ART & Suporte</h4>
+                                <p class="step-desc">Entrega formal do laudo com emissão de ART junto ao CREA-MS e orientação técnica direta para subsidiar sua decisão com total segurança.</p>
                             </div>
                         </div>
                     </div>
@@ -345,12 +423,12 @@
                 <!-- Coluna Direita: Imagem e Painel de Diferenciais -->
                 <div class="work-col-right fade-in-right" style="animation-delay: 200ms;">
                     <div class="work-img-wrapper">
-                        <img src="img/c980c8fd-7d9e-4c36-ba0a-70db552eb799.png"
-                            alt="Mesa de trabalho de arquiteto com maquetes, esboços e projetos" loading="lazy">
+                        <img src="img/img/nivelamento.webp"
+                            alt="Verificação técnica de prumo e nivelamento em vistoria" loading="lazy">
 
                         <!-- Painel Sobreposto -->
                         <div class="diff-overlay-panel">
-                            <h3 class="panel-title">Por que escolher a Brick Arquitetura?</h3>
+                            <h3 class="panel-title">Por que escolher a Bault Engenharia?</h3>
                             <ul class="diff-list">
                                 <li class="diff-item">
                                     <svg class="check-icon" viewBox="0 0 16 16" fill="none"
@@ -358,7 +436,7 @@
                                         <path d="M3 8L6.5 11.5L13 4.5" stroke="currentColor" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span>Projetos exclusivos e personalizados</span>
+                                    <span>Laudos técnicos documentados e juridicamente defensáveis</span>
                                 </li>
                                 <li class="diff-item">
                                     <svg class="check-icon" viewBox="0 0 16 16" fill="none"
@@ -366,7 +444,7 @@
                                         <path d="M3 8L6.5 11.5L13 4.5" stroke="currentColor" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span>Acompanhamento estético ponta a ponta</span>
+                                    <span>Diagnóstico de causa raiz de manifestações patológicas</span>
                                 </li>
                                 <li class="diff-item">
                                     <svg class="check-icon" viewBox="0 0 16 16" fill="none"
@@ -374,7 +452,7 @@
                                         <path d="M3 8L6.5 11.5L13 4.5" stroke="currentColor" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span>Foco no bem-estar, luz natural e funcionalidade</span>
+                                    <span>Avaliação de imóveis conforme a NBR 14653</span>
                                 </li>
                                 <li class="diff-item">
                                     <svg class="check-icon" viewBox="0 0 16 16" fill="none"
@@ -382,7 +460,7 @@
                                         <path d="M3 8L6.5 11.5L13 4.5" stroke="currentColor" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span>Detalhamento técnico rigoroso para marcenaria</span>
+                                    <span>Eng.ª Civil Camila Baltuilhe Vargas, CREA-MS 66082</span>
                                 </li>
                                 <li class="diff-item">
                                     <svg class="check-icon" viewBox="0 0 16 16" fill="none"
@@ -390,7 +468,7 @@
                                         <path d="M3 8L6.5 11.5L13 4.5" stroke="currentColor" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span>Estética contemporânea, moderna e atemporal</span>
+                                    <span>Atendimento especializado em todo o Mato Grosso do Sul</span>
                                 </li>
                             </ul>
                         </div>
@@ -404,7 +482,7 @@
     <section class="testimonials-section light-bg-accent" id="depoimentos">
         <div class="section-container relative">
             <div class="section-header text-center fade-in-up">
-                <h2 class="section-title text-dark">O que nossos clientes dizem</h2>
+                <h2 class="section-title text-dark">O que dizem os clientes</h2>
             </div>
 
             <!-- Carrossel de Depoimentos -->
@@ -419,38 +497,40 @@
 
                 <div class="testimonial-wrapper">
                     <!-- Aspas Gigantes Decorativas -->
-                    <div class="quote-mark">“</div>
+                    <div class="quote-mark">"</div>
 
                     <div class="testimonial-slides" id="testimonialSlides">
                         <!-- Depoimento 1 -->
                         <div class="testimonial-slide active" data-index="0">
                             <p class="testimonial-text">
-                                A sensibilidade em entender a nossa rotina e traduzir isso em uma fachada contemporânea 
-                                imponente e ambientes internos acolhedores superou todas as expectativas. O projeto da nossa casa 
-                                ficou simplesmente perfeito.
+                                Contratamos a vistoria pré-compra da Bault antes de fechar um imóvel e o laudo apontou
+                                problemas de umidade e fissuras que nos pouparam um prejuízo considerável na negociação.
+                                Troquei a dúvida pela certeza de um documento técnico irrefutável.
                             </p>
-                            <h4 class="testimonial-author">Ricardo Meneghetti</h4>
-                            <span class="testimonial-cat">Residência MM | Proprietário</span>
+                            <h4 class="testimonial-author">Marcelo Guimarães</h4>
+                            <span class="testimonial-cat">Vistoria Pré-Compra | Proprietário</span>
                         </div>
 
                         <!-- Depoimento 2 -->
                         <div class="testimonial-slide" data-index="1">
                             <p class="testimonial-text">
-                                O projeto corporativo desenvolvido pela Brick otimizou a integração da nossa equipe e trouxe 
-                                uma identidade moderna e sofisticada que impressiona todos os nossos parceiros e clientes.
+                                A atuação pericial da Eng.ª Camila Baltuilhe foi decisiva para o sucesso da ação indenizatória
+                                de nosso cliente. O laudo pericial apresentou embasamento normativo sólido, clareza exemplar e
+                                fundamentação técnica defensável em juízo.
                             </p>
-                            <h4 class="testimonial-author">Juliana Vasconcellos</h4>
-                            <span class="testimonial-cat">Sede Corporativa | Diretora de Operações</span>
+                            <h4 class="testimonial-author">Dra. Mariana Vasconcelos</h4>
+                            <span class="testimonial-cat">Perícia Técnica Judicial | Advogada</span>
                         </div>
 
                         <!-- Depoimento 3 -->
                         <div class="testimonial-slide" data-index="2">
                             <p class="testimonial-text">
-                                O detalhamento técnico do projeto de interiores facilitou muito a execução dos móveis sob medida 
-                                e a escolha dos acabamentos. Um profissionalismo e organização admiráveis.
+                                A Bault realizou o diagnóstico de manifestações patológicas no nosso condomínio. A indicação precisa
+                                entre reparo urgente e manutenção preventiva nos deu total tranquilidade para planejar os investimentos
+                                e prestar contas aos moradores.
                             </p>
-                            <h4 class="testimonial-author">Julio César</h4>
-                            <span class="testimonial-cat">Loft Jardins | Proprietário</span>
+                            <h4 class="testimonial-author">Carlos Alberto Ramos</h4>
+                            <span class="testimonial-cat">Diagnóstico de Patologias | Síndico</span>
                         </div>
                     </div>
                 </div>
@@ -479,18 +559,18 @@
             <div class="footer-grid">
                 <!-- Coluna 1: Marca e Redes Sociais -->
                 <div class="footer-col brand-col fade-in-up">
-                    <span class="logo footer-logo">BRICK ARQUITETURA</span>
-                    <p class="footer-brand-text">Arquitetura autoral que transforma sonhos em espaços de alto padrão, combinando estética, sofisticação e funcionalidade.</p>
+                    <span class="logo footer-logo">BAULT ENGENHARIA</span>
+                    <p class="footer-brand-text">Segurança e diagnóstico técnico do estado real de edificações em todo o Mato Grosso do Sul. Laudos claros, precisos e com respaldo legal.</p>
                     <div class="social-links">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                            aria-label="Visite nosso LinkedIn">
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-                            aria-label="Visite nosso Instagram">
+                        <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram da Bault Engenharia">
                             <span>Instagram</span>
                         </a>
-                        <a href="mailto:contato@brickarquitetura.com" aria-label="Envie um e-mail">
+                        <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer"
+                            aria-label="WhatsApp da Bault Engenharia">
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="mailto:camila@baultengenharia.com" aria-label="Envie um e-mail">
                             <span>E-mail</span>
                         </a>
                     </div>
@@ -498,17 +578,18 @@
 
                 <!-- Coluna 2: Links -->
                 <div class="footer-col links-col fade-in-up" style="animation-delay: 100ms;">
-                    <h4 class="footer-title">Links</h4>
+                    <h4 class="footer-title">Navegação</h4>
                     <ul class="footer-links-list">
-                        <li><a href="#hero">Início</a></li>
-                        <li><a href="#atuacao">Sobre Nós</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#projetos">Projetos</a></li>
-                        <li><a href="#como-trabalhamos">Como Trabalhamos</a></li>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#entregamos">O que Entregamos</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="#publico">Para Quem</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="#contato">Contato</a></li>
                     </ul>
                 </div>
 
-                <!-- Coluna 3: Contatos -->
+                <!-- Coluna 3: Contatos Oficiais -->
                 <div class="footer-col contact-col fade-in-up" style="animation-delay: 200ms;">
                     <h4 class="footer-title">Contato</h4>
                     <ul class="footer-contact-list">
@@ -522,7 +603,7 @@
                                 <path d="M23 7L12 14L1 7" stroke="currentColor" stroke-width="1.5"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <span>contato@brickarquitetura.com</span>
+                            <a href="mailto:camila@baultengenharia.com" style="color: inherit;">camila@baultengenharia.com</a>
                         </li>
                         <li class="contact-item">
                             <svg class="contact-icon" viewBox="0 0 24 24" fill="none"
@@ -532,7 +613,11 @@
                                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                            <span>+55 (11) 99999-9999</span>
+                            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" style="color: inherit;">(67) 99283-8880</a>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fa-brands fa-instagram contact-icon" style="font-size: 16px; margin-top: 3px;"></i>
+                            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" style="color: inherit;">@baultengenharia</a>
                         </li>
                         <li class="contact-item">
                             <svg class="contact-icon" viewBox="0 0 24 24" fill="none"
@@ -542,19 +627,7 @@
                                     stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                            <span>Av. Paulista, 1000 - Bela Vista, São Paulo - SP</span>
-                        </li>
-                        <li class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <span>Seg. a Sex. — 08:00 às 18:00</span>
+                            <span>Campo Grande, MS | Todo o Estado</span>
                         </li>
                     </ul>
                 </div>
@@ -565,15 +638,15 @@
                     <form class="footer-contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name" class="sr-only">Nome Completo</label>
-                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                            <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
                         </div>
                         <div class="form-group">
                             <label for="email" class="sr-only">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                            <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required>
                         </div>
                         <div class="form-group">
                             <label for="message" class="sr-only">Mensagem</label>
-                            <textarea id="message" name="message" placeholder="Escreva sua mensagem..."
+                            <textarea id="message" name="message" placeholder="Descreva sua edificação ou a necessidade técnica..."
                                 required></textarea>
                         </div>
                         <button type="submit" class="btn-submit">Enviar Mensagem</button>
@@ -582,9 +655,11 @@
                 </div>
             </div>
 
-            <!-- Direitos Autorais -->
+            <!-- Direitos Autorais e CREA -->
             <div class="footer-bottom text-center">
-                <p class="copyright-text">© 2026 Brick Arquitetura. Todos os direitos reservados. | Desenvolvido por agencia clean.</p>
+                <p class="copyright-text">
+                    © 2026 Bault Engenharia. Todos os direitos reservados. | ENG.ª CIVIL CAMILA BALTUILHE VARGAS DO NASCIMENTO | CREA-MS 66082
+                </p>
             </div>
         </div>
     </footer>
@@ -593,6 +668,7 @@
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <!-- JavaScript -->
     <script src="script.js"></script>
+
 </body>
 
 </html>

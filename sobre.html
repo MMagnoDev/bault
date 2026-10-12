@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre a Bault Engenharia | Quem Somos e Nossa Base</title>
+    <meta name="description"
+        content="Conheça a Bault Engenharia: quem somos, propósito, visão e valores. Sob o comando da Eng.ª Civil Camila Baltuilhe Vargas do Nascimento (CREA-MS 66082), atuamos com rigor técnico e independência em todo o Mato Grosso do Sul.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* =============================================
+           ESTILOS ESPECÍFICOS DA PÁGINA SOBRE
+        ============================================= */
+
+        /* Subhero da página interna */
+        .page-hero {
+            padding: 160px 0 80px;
+            background: var(--color-dark, #1a1a1a);
+        }
+
+        .page-hero-inner {
+            max-width: 760px;
+        }
+
+        .page-hero .section-label {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent, #5AB4C4);
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: #fff;
+            margin-bottom: 24px;
+        }
+
+        .page-hero p {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.65);
+            max-width: 600px;
+        }
+
+        /* Quem Somos */
+        .quem-somos-section {
+            padding: 100px 0;
+            background: var(--color-dark, #1a1a1a);
+        }
+
+        .quem-somos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .quem-somos-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(32px, 3.5vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            color: #fff;
+            margin-bottom: 32px;
+        }
+
+        .quem-somos-text p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.65);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .quem-somos-img-col {
+            position: relative;
+        }
+
+        .quem-somos-img-col img {
+            width: 100%;
+            border-radius: 4px;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+        }
+
+        .engenheira-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.72);
+            backdrop-filter: blur(8px);
+            padding: 20px 24px;
+            border-radius: 0 0 4px 4px;
+            text-align: center;
+        }
+
+        .engenheira-label strong {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .engenheira-label span {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.04em;
+        }
+
+        /* Nossa Base */
+        .nossa-base-section {
+            padding: 100px 0;
+            background: var(--color-light, #f5f2ee);
+        }
+
+        .nossa-base-header {
+            margin-bottom: 60px;
+        }
+
+        .nossa-base-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(32px, 3.5vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .nossa-base-header p {
+            font-family: 'Inter', sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            color: #555;
+            max-width: 640px;
+        }
+
+        .base-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2px;
+        }
+
+        .base-img-col {
+            background: #1a1a1a;
+            border-radius: 4px 0 0 4px;
+            overflow: hidden;
+        }
+
+        .base-img-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .base-card {
+            background: #1a1a1a;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .base-card:last-child {
+            border-radius: 0 4px 4px 0;
+        }
+
+        .base-card-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent, #5AB4C4);
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .base-card-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .base-card-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .base-card-body li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .base-card-body li::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: var(--color-accent, #5AB4C4);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* Números da empresa */
+        .numeros-section {
+            padding: 100px 0;
+            background: var(--color-dark, #1a1a1a);
+        }
+
+        .numeros-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .numero-item {
+            padding: 48px 40px;
+            background: var(--color-dark, #1a1a1a);
+            text-align: center;
+        }
+
+        .numero-valor {
+            font-family: 'Outfit', sans-serif;
+            font-size: 52px;
+            font-weight: 300;
+            line-height: 1;
+            color: #fff;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .numero-valor span {
+            color: var(--color-accent, #5AB4C4);
+        }
+
+        .numero-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.04em;
+        }
+
+        /* CTA final */
+        .sobre-cta-section {
+            padding: 100px 0;
+            background: var(--color-light, #f5f2ee);
+            text-align: center;
+        }
+
+        .sobre-cta-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(28px, 3vw, 42px);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .sobre-cta-section p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            color: #666;
+            max-width: 480px;
+            margin: 0 auto 40px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .page-hero {
+                padding: 130px 0 60px;
+            }
+            .quem-somos-section {
+                padding: 70px 0;
+            }
+            .nossa-base-section {
+                padding: 70px 0;
+            }
+            .numeros-section {
+                padding: 70px 0;
+            }
+            .sobre-cta-section {
+                padding: 70px 0;
+            }
+            .quem-somos-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .quem-somos-img-col {
+                order: -1;
+            }
+            .quem-somos-img-col img {
+                aspect-ratio: 4/3;
+            }
+            .base-grid {
+                grid-template-columns: 1fr;
+            }
+            .base-img-col {
+                aspect-ratio: 16/9;
+                border-radius: 4px 4px 0 0;
+            }
+            .base-card:last-child {
+                border-radius: 0 0 4px 4px;
+            }
+            .numeros-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-hero {
+                padding: 110px 0 48px;
+            }
+            .quem-somos-section {
+                padding: 56px 0;
+            }
+            .nossa-base-section {
+                padding: 56px 0;
+            }
+            .numeros-section {
+                padding: 56px 0;
+            }
+            .sobre-cta-section {
+                padding: 56px 0;
+            }
+            .numeros-grid {
+                grid-template-columns: 1fr;
+            }
+            .numero-item {
+                padding: 36px 20px;
+            }
+            .base-card {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho (Navbar) -->
+    <header class="main-header" id="header">
+        <div class="header-container">
+            <nav class="nav-menu nav-left">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="servicos.html" class="nav-link">Serviços</a>
+            </nav>
+
+            <div class="logo-container">
+                <a href="index.html" class="logo" aria-label="Bault Engenharia">
+                    <img src="img/logotipo.webp" alt="Bault Engenharia" class="logo-img">
+                </a>
+            </div>
+
+            <nav class="nav-menu nav-right">
+                <a href="sobre.html" class="nav-link" style="opacity:1;">Sobre Nós</a>
+                <a href="index.html#contato" class="nav-link">Contato</a>
+            </nav>
+
+            <!-- Mobile Menu Trigger -->
+            <button class="mobile-menu-trigger" aria-label="Abrir menu" aria-expanded="false" id="menuBtn">
+                <span class="burger-bar"></span>
+                <span class="burger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Panel -->
+    <div class="mobile-nav-panel" id="mobilePanel" aria-hidden="true">
+        <button class="mobile-menu-close" aria-label="Fechar menu" id="closeBtn">&times;</button>
+        <nav class="mobile-menu-links">
+            <a href="index.html" class="mobile-link">Início</a>
+            <a href="servicos.html" class="mobile-link">Serviços</a>
+            <a href="index.html#casos" class="mobile-link">Casos</a>
+            <a href="sobre.html" class="mobile-link">Sobre Nós</a>
+            <a href="index.html#contato" class="mobile-link">Contato</a>
+        </nav>
+    </div>
+
+    <!-- Hero da Página -->
+    <section class="page-hero">
+        <div class="section-container">
+            <div class="page-hero-inner fade-in-left">
+                <h1>Segurança e diagnóstico técnico do estado real da sua edificação.</h1>
+                <p>Nascemos para substituir a incerteza por respostas técnicas, documentadas e defensáveis, fornecendo o respaldo técnico que você precisa para tomar decisões seguras em todo o Mato Grosso do Sul.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem Somos -->
+    <section class="quem-somos-section">
+        <div class="section-container">
+            <div class="quem-somos-grid">
+                <!-- Texto -->
+                <div class="quem-somos-text fade-in-left">
+                    <h2>Técnica a serviço de decisões seguras</h2>
+                    <p>
+                        A Bault Engenharia é especializada em diagnóstico técnico e segurança predial, entregando avaliações precisas sobre o estado real de edificações residenciais, comerciais e institucionais em todo o Mato Grosso do Sul.
+                    </p>
+                    <p>
+                        Sob a liderança da <strong>Eng.ª Civil Camila Baltuilhe Vargas do Nascimento (CREA-MS 66082)</strong>, atuamos com rigor normativo, imparcialidade e método investigativo detalhado em cada inspeção e laudo elaborado.
+                    </p>
+                    <p>
+                        Na prática, nosso trabalho permite que o cliente troque a dúvida angustiante (<em>"essa rachadura é grave?", "esse imóvel esconde vícios ocultos?", "a obra vizinha causou abalo estrutural?"</em>) por um parecer técnico conclusivo e juridicamente defensável.
+                    </p>
+                    <p>
+                        Seja para negociar um imóvel com segurança, acionar garantias construtivas, reformar com respaldo técnico, litigar em juízo ou simplesmente dormir tranquilo conhecendo a saúde real da sua edificação: entregamos a técnica que ilumina a sua decisão.
+                    </p>
+                </div>
+
+                <!-- Foto -->
+                <div class="quem-somos-img-col fade-in-right" style="animation-delay: 200ms;">
+                    <img src="img/img/sobre.webp" alt="Eng.ª Civil Camila Baltuilhe Vargas do Nascimento, CREA-MS 66082" loading="lazy">
+                    <div class="engenheira-label">
+                        <strong>ENG.ª CIVIL CAMILA BALTUILHE VARGAS DO NASCIMENTO</strong>
+                        <span>CREA-MS 66082</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Números -->
+    <section class="numeros-section">
+        <div class="section-container">
+            <div class="numeros-grid fade-in-up">
+                <div class="numero-item">
+                    <div class="numero-valor">+<span>200</span></div>
+                    <div class="numero-label">Laudos emitidos</div>
+                </div>
+                <div class="numero-item">
+                    <div class="numero-valor"><span>100</span>%</div>
+                    <div class="numero-label">Imparcialidade técnica</div>
+                </div>
+                <div class="numero-item">
+                    <div class="numero-valor"><span>MS</span></div>
+                    <div class="numero-label">Mato Grosso do Sul</div>
+                </div>
+                <div class="numero-item">
+                    <div class="numero-valor"><span>6</span></div>
+                    <div class="numero-label">Serviços especializados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa Base: Propósito, Visão e Valores -->
+    <section class="nossa-base-section">
+        <div class="section-container">
+            <div class="nossa-base-header fade-in-up">
+                <h2>Nossa Base</h2>
+                <p>Partimos do princípio de que uma empresa humanizada é uma empresa melhor para todos.</p>
+            </div>
+
+            <div class="base-grid fade-in-up" style="animation-delay: 150ms;">
+                <!-- Imagem -->
+                <div class="base-img-col">
+                    <img src="img/img/escritorio.webp" alt="Base da Bault Engenharia" loading="lazy">
+                </div>
+
+                <!-- Propósito -->
+                <div class="base-card">
+                    <div class="base-card-label">Propósito</div>
+                    <div class="base-card-body">
+                        Que todo cliente tenha o respaldo técnico necessário para decidir sobre seu imóvel com segurança, clareza e tranquilidade.
+                    </div>
+                </div>
+
+                <!-- Visão -->
+                <div class="base-card">
+                    <div class="base-card-label">Visão</div>
+                    <div class="base-card-body">
+                        Consolidar uma cultura em que toda decisão sobre imóvel só se toma com base em informação técnica confiável e imparcial.
+                    </div>
+                </div>
+
+                <!-- Valores -->
+                <div class="base-card">
+                    <div class="base-card-label">Valores</div>
+                    <div class="base-card-body">
+                        <ul>
+                            <li>Transparência</li>
+                            <li>Evolução contínua</li>
+                            <li>Rigor técnico</li>
+                            <li>Imparcialidade</li>
+                            <li>Clareza</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="sobre-cta-section">
+        <div class="section-container">
+            <h2 class="fade-in-up">Pronto para tomar uma decisão segura sobre seu imóvel?</h2>
+            <p class="fade-in-up" style="animation-delay: 100ms;">Entre em contato e descubra qual serviço da Bault Engenharia é o mais adequado para a sua necessidade.</p>
+            <div class="fade-in-up" style="animation-delay: 200ms;">
+                <a href="index.html#contato" class="btn-dark-outline">Fale Conosco</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer-section dark-bg" id="contato">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col fade-in-up">
+                    <span class="logo footer-logo">BAULT ENGENHARIA</span>
+                    <p class="footer-brand-text">Segurança e diagnóstico técnico do estado real de edificações em todo o Mato Grosso do Sul com rigor técnico e imparcialidade.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span>Instagram</span></a>
+                        <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><span>WhatsApp</span></a>
+                        <a href="mailto:camila@baultengenharia.com" aria-label="E-mail"><span>E-mail</span></a>
+                    </div>
+                </div>
+
+                <div class="footer-col links-col fade-in-up" style="animation-delay: 100ms;">
+                    <h4 class="footer-title">Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="index.html#casos">Casos Atendidos</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col contact-col fade-in-up" style="animation-delay: 200ms;">
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-contact-list">
+                        <li class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 5H21C22.1 5 23 5.9 23 7V17C23 18.1 22.1 19 21 19H3C1.9 19 1 18.1 1 17V7C1 5.9 1.9 5 3 5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M23 7L12 14L1 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <a href="mailto:camila@baultengenharia.com" style="color: inherit;">camila@baultengenharia.com</a>
+                        </li>
+                        <li class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22 20.47 21.53 20.94 20.97 20.99C18.84 20.76 16.81 20.02 14.96 18.89C12.97 17.7 11.28 15.93 10.1 13.91C8.96 12.02 8.22 9.95 8 7.78C7.95 7.21 8.41 6.72 8.97 6.72H11.97C12.47 6.72 12.89 7.08 12.96 7.57C13.09 8.51 13.34 9.42 13.7 10.28C13.84 10.6 13.76 10.97 13.52 11.21L12.25 12.51C13.34 14.47 14.94 16.1 16.87 17.2L18.14 15.9C18.38 15.66 18.74 15.58 19.06 15.72C19.92 16.08 20.83 16.32 21.78 16.45C22.28 16.52 22.64 16.94 22.64 17.44V16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" style="color: inherit;">(67) 99283-8880</a>
+                        </li>
+                        <li class="contact-item">
+                            <i class="fa-brands fa-instagram contact-icon" style="font-size: 16px; margin-top: 3px;"></i>
+                            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" style="color: inherit;">@baultengenharia</a>
+                        </li>
+                        <li class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span>Campo Grande, MS | Todo o Estado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col form-col fade-in-up" style="animation-delay: 300ms;">
+                    <h4 class="footer-title">Fale Conosco</h4>
+                    <form class="footer-contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="sr-only">Nome Completo</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="sr-only">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="sr-only">Mensagem</label>
+                            <textarea id="message" name="message" placeholder="Descreva o serviço que precisa..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                        <div class="form-feedback" id="formFeedback"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom text-center">
+                <p class="copyright-text">© 2026 Bault Engenharia. Todos os direitos reservados. | Eng.ª Civil Camila Baltuilhe Vargas do Nascimento | CREA-MS 66082</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
