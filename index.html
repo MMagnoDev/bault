@@ -24,7 +24,7 @@
     <header class="main-header" id="header">
         <div class="header-container">
             <nav class="nav-menu nav-left">
-                <a href="#hero" class="nav-link">Início</a>
+                <a href="index.html" class="nav-link active" style="color: var(--color-accent);">Início</a>
                 <a href="servicos.html" class="nav-link">Serviços</a>
             </nav>
 
@@ -36,7 +36,7 @@
 
             <nav class="nav-menu nav-right">
                 <a href="sobre.html" class="nav-link">Sobre Nós</a>
-                <a href="#contato" class="nav-link">Contato</a>
+                <a href="contato.html" class="nav-link">Contato</a>
             </nav>
 
             <!-- Mobile Menu Trigger -->
@@ -47,39 +47,47 @@
         </div>
     </header>
 
-    <!-- Mobile Navigation Panel -->
+    <!-- Mobile Navigation Panel Padronizado -->
     <div class="mobile-nav-panel" id="mobilePanel" aria-hidden="true">
         <button class="mobile-menu-close" aria-label="Fechar menu" id="closeBtn">&times;</button>
         <nav class="mobile-menu-links">
-            <a href="index.html" class="mobile-link">Início</a>
+            <a href="index.html" class="mobile-link" style="color: var(--color-accent);">Início</a>
             <a href="#entregamos" class="mobile-link">O que Entregamos</a>
-            <a href="#atuacao" class="mobile-link">Atuação</a>
+            <a href="#atuacao" class="mobile-link">Áreas de Atuação</a>
             <a href="servicos.html" class="mobile-link">Serviços</a>
             <a href="#publico" class="mobile-link">Para Quem</a>
             <a href="sobre.html" class="mobile-link">Sobre Nós</a>
-            <a href="#contato" class="mobile-link">Contato</a>
+            <a href="contato.html" class="mobile-link">Contato</a>
         </nav>
+        <div class="mobile-social-icons">
+            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram da Bault Engenharia">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp da Bault Engenharia">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:camila@baultengenharia.com" class="social-icon-btn" aria-label="E-mail da Bault Engenharia">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section Ampla e Imersiva (Conforme Referências do PDF) -->
     <section class="hero-section" id="hero">
         <div class="hero-container">
-            <div class="hero-col-left fade-in-left">
+            <div class="hero-col-left">
                 <h1 class="hero-title">Segurança e diagnóstico técnico do estado real de uma edificação.</h1>
                 <p class="hero-paragraph">
                     Substitua a incerteza por uma resposta técnica, documentada e defensável. Laudos de vistoria,
-                    diagnóstico de patologias construtivas e perícias com rigor técnico e respaldo legal em todo o Mato Grosso do Sul.
+                    diagnóstico de manifestações patológicas e perícias com rigor técnico e respaldo legal em todo o Mato Grosso do Sul.
                 </p>
                 <div class="hero-cta-group">
-                    <a href="servicos.html" class="btn-outline">Conheça os Serviços</a>
-                    <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" class="btn-outline btn-whatsapp">
-                        Falar no WhatsApp
+                    <a href="contato.html" class="btn-brand-blue">Fale Conosco</a>
+                    <a href="servicos.html" class="btn-brand-outline">Conheça os Serviços</a>
+                    <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" class="btn-brand-outline">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 16px;"></i> WhatsApp
                     </a>
                 </div>
-            </div>
-            <div class="hero-col-right fade-in-right">
-                <img src="img/img/rachadura.webp" alt="Diagnóstico técnico de fissuras e patologias estruturais com fissurômetro"
-                    class="hero-image" fetchpriority="high">
             </div>
         </div>
     </section>
@@ -87,25 +95,25 @@
     <!-- Seção: O Que Entregamos (Fiel ao Briefing Visual) -->
     <section class="entregamos-section" id="entregamos">
         <div class="entregamos-container">
-            <div class="entregamos-header-line fade-in-up">
+            <div class="entregamos-header-line">
                 <h2 class="entregamos-title">O que entregamos</h2>
                 <div class="entregamos-line"></div>
             </div>
 
             <div class="entregamos-list">
-                <div class="entregamos-box reveal" style="transition-delay: 60ms;">
+                <div class="entregamos-box">
                     <p class="entregamos-box-text">Melhoria da qualidade construtiva</p>
                 </div>
-                <div class="entregamos-box reveal" style="transition-delay: 130ms;">
+                <div class="entregamos-box">
                     <p class="entregamos-box-text">Processos claros e organizados</p>
                 </div>
-                <div class="entregamos-box reveal" style="transition-delay: 200ms;">
+                <div class="entregamos-box">
                     <p class="entregamos-box-text">Apuração de responsabilidade técnica</p>
                 </div>
-                <div class="entregamos-box reveal" style="transition-delay: 270ms;">
+                <div class="entregamos-box">
                     <p class="entregamos-box-text">Avaliação de impacto técnico e financeiro</p>
                 </div>
-                <div class="entregamos-box reveal" style="transition-delay: 340ms;">
+                <div class="entregamos-box">
                     <p class="entregamos-box-text">Indicação do procedimento correto (reparo, manutenção ou correção)</p>
                 </div>
             </div>
@@ -115,54 +123,88 @@
     <!-- Áreas de Atuação -->
     <section class="acting-section dark-bg" id="atuacao">
         <div class="section-container">
-            <div class="section-header text-center fade-in-up">
+            <div class="section-header text-center">
                 <h2 class="section-title">Áreas de Atuação</h2>
                 <p class="section-subtitle">Engenharia diagnóstica com método rigoroso, embasamento normativo e independência profissional.</p>
             </div>
 
-            <div class="acting-grid">
-                <!-- Atuação 1 -->
-                <div class="acting-card fade-in-up" style="animation-delay: 100ms;">
-                    <div class="acting-img-wrapper">
-                        <img src="img/img/inspecao.webp" alt="Laudos de Vistoria Técnica e Inspeção Predial"
-                            loading="lazy">
+            <div class="acting-carousel-wrapper" id="actingCarousel">
+                <div class="acting-carousel-viewport">
+                    <div class="acting-grid" id="actingTrack">
+                        <!-- Serviço 1: Laudos de Vistoria -->
+                        <a href="servicos.html" class="acting-card" aria-label="Laudos de Vistoria">
+                            <img src="img/real/camila_inspecao_fissura.jpg" alt="Laudos de Vistoria Técnica e Inspeção Predial - Eng.ª Civil Camila Baltuilhe" class="acting-card-img" loading="lazy">
+                            <div class="acting-card-overlay">
+                                <h3 class="acting-card-title">Laudos de Vistoria</h3>
+                                <p class="acting-card-text">Vistorias cautelares de vizinhança, vistoria de entrega de obra e pré-compra de imóvel com registro técnico minucioso.</p>
+                            </div>
+                        </a>
+
+                        <!-- Serviço 2: Diagnóstico de Manifestações Patológicas -->
+                        <a href="servicos.html" class="acting-card" aria-label="Diagnóstico de Manifestações Patológicas">
+                            <img src="img/real/camila_termografia_mao.jpg" alt="Diagnóstico técnico de manifestações patológicas com câmera termográfica" class="acting-card-img" loading="lazy">
+                            <div class="acting-card-overlay">
+                                <h3 class="acting-card-title">Diagnóstico de Manifestações Patológicas</h3>
+                                <p class="acting-card-text">Identificação da causa de fissuras, infiltrações, eflorescências, corrosão de armadura e recalque de fundação, entre outros.</p>
+                            </div>
+                        </a>
+
+                        <!-- Serviço 3: Perícia & Consultoria -->
+                        <a href="servicos.html" class="acting-card" aria-label="Perícia e Consultoria">
+                            <img src="img/real/camila_drone_perfil.png" alt="Perícia Técnica, Laudo Pericial e Inspeção com Drone - Eng.ª Camila Baltuilhe" class="acting-card-img" loading="lazy">
+                            <div class="acting-card-overlay">
+                                <h3 class="acting-card-title">Perícia &amp; Consultoria</h3>
+                                <p class="acting-card-text">Perícias judiciais e extrajudiciais com valor probatório, assistência técnica em processos e pareceres conclusivos.</p>
+                            </div>
+                        </a>
+
+                        <!-- Serviço 4: Consultoria Técnica para Construtoras -->
+                        <a href="servicos.html" class="acting-card" aria-label="Consultoria Técnica para Construtoras">
+                            <img src="img/real/camila_parede_inspecao.jpg" alt="Consultoria Técnica para Construtoras e Auditoria de Obras" class="acting-card-img" loading="lazy">
+                            <div class="acting-card-overlay">
+                                <h3 class="acting-card-title">Consultoria &amp; Auditoria de Obras</h3>
+                                <p class="acting-card-text">Acompanhamento técnico de obras, auditoria de conformidade documental e prevenção de passivos construtivos.</p>
+                            </div>
+                        </a>
+
+                        <!-- Serviço 5: Avaliação de Imóveis -->
+                        <a href="servicos.html" class="acting-card" aria-label="Avaliação de Imóveis NBR 14653">
+                            <img src="img/real/camila_drone_empe.png" alt="Avaliação técnica de imóveis urbanos segundo a NBR 14653" class="acting-card-img" loading="lazy">
+                            <div class="acting-card-overlay">
+                                <h3 class="acting-card-title">Avaliação de Imóveis (NBR 14653)</h3>
+                                <p class="acting-card-text">Determinação técnica e fundamentada do valor de mercado de imóveis residenciais, comerciais e institucionais.</p>
+                            </div>
+                        </a>
                     </div>
-                    <h3 class="acting-card-title">Laudos de Vistoria</h3>
-                    <p class="acting-card-text">Vistorias cautelares de vizinhança, vistoria de entrega de obra e pré-compra de imóvel com registro técnico minucioso.</p>
                 </div>
 
-                <!-- Atuação 2 -->
-                <div class="acting-card fade-in-up" style="animation-delay: 200ms;">
-                    <div class="acting-img-wrapper">
-                        <img src="img/img/infiltracao.webp" alt="Diagnóstico de patologias construtivas e infiltrações com medidor eletrônico"
-                            loading="lazy">
-                    </div>
-                    <h3 class="acting-card-title">Diagnóstico de Patologias</h3>
-                    <p class="acting-card-text">Identificação da causa raiz de fissuras, infiltrações, eflorescências, corrosão de armadura e recalque de fundação.</p>
-                </div>
-
-                <!-- Atuação 3 -->
-                <div class="acting-card fade-in-up" style="animation-delay: 300ms;">
-                    <div class="acting-img-wrapper">
-                        <img src="img/img/escritorio.webp" alt="Perícia Técnica e Avaliação NBR 14653" loading="lazy">
-                    </div>
-                    <h3 class="acting-card-title">Perícia & Consultoria</h3>
-                    <p class="acting-card-text">Perícias judiciais e extrajudiciais com valor probatório, auditoria de obras e avaliação imobiliária pela NBR 14653.</p>
+                <!-- Setas de Navegação (Anterior / Próximo) -->
+                <div class="acting-carousel-nav" aria-label="Navegação de Áreas de Atuação">
+                    <button type="button" class="acting-nav-btn" id="prevActing" aria-label="Serviço anterior">
+                        <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 1L1 8M1 8L8 15M1 8H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="acting-nav-btn" id="nextActing" aria-label="Próximo serviço">
+                        <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1L23 8M23 8L16 15M23 8H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Banner Institucional (Transformação do Cliente) -->
+    <!-- Banner Institucional (Texto Institucional sem perguntas entre parênteses) -->
     <section class="banner-section">
         <div class="banner-image-container">
             <div class="banner-media">
                 <img src="img/img/fachada.webp" alt="Engenharia civil diagnóstica com respaldo técnico e jurídico"
                     class="banner-bg-img" data-parallax="0.18" loading="lazy">
             </div>
-            <div class="banner-overlay-box fade-in-up">
+            <div class="banner-overlay-box">
                 <h2 class="banner-box-title">Técnica a serviço de uma decisão que, sem ela, seria tomada no escuro.</h2>
-                <p class="banner-box-text">O cliente troca a incerteza ("essa rachadura é grave?", "esse imóvel esconde algum problema estrutural?") por uma resposta técnica, documentada e defensável para negociar, litigar, reformar ou simplesmente dormir tranquilo.</p>
+                <p class="banner-box-text">O cliente troca a incerteza por uma resposta técnica, documentada e defensável para negociar, litigar, reformar ou simplesmente dormir tranquilo.</p>
                 <a href="sobre.html" class="banner-link">
                     <span>Conheça a Bault</span>
                     <svg class="arrow-icon" width="18" height="12" viewBox="0 0 18 12" fill="none"
@@ -175,207 +217,64 @@
         </div>
     </section>
 
-    <!-- Seção de Serviços -->
-    <section class="services-section dark-bg" id="servicos">
-        <div class="section-container">
-            <div class="section-header text-center fade-in-up">
-                <h2 class="section-title">O que a Bault Vende</h2>
-                <p class="section-subtitle">Segurança técnica fundamentada para proteger seu patrimônio, dirimir litígios e respaldar decisões críticas.</p>
-            </div>
-
-            <div class="carousel-mobile-container" data-carousel="services" data-lenis-prevent>
-                <div class="services-grid carousel-track">
-                    <!-- Serviço 1 -->
-                    <div class="service-item fade-in-up" style="animation-delay: 100ms;">
-                        <div class="service-icon-wrapper">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3 21H21M5 21V6C5 4.89543 5.89543 4 7 4H17C18.1046 4 19 4.89543 19 6V21M9 8H15M9 12H15M9 16H15"
-                                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <h3 class="service-item-title">Laudos de Vistoria</h3>
-                        <p class="service-item-desc">Vistoria cautelar de vizinhança, vistoria de entrega de obra e pré-compra de imóvel. Documentação comprobatória com registro fotográfico e análise técnica.</p>
-                        <a href="servicos.html" class="service-link">
-                            <span>Saiba mais</span>
-                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Serviço 2 -->
-                    <div class="service-item fade-in-up" style="animation-delay: 200ms;">
-                        <div class="service-icon-wrapper">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 9V14M12 17.5V18M10.29 3.86L1.82 18A2 2 0 003.55 21H20.45A2 2 0 0022.18 18L13.71 3.86A2 2 0 0010.29 3.86Z"
-                                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <h3 class="service-item-title">Diagnóstico de Patologias</h3>
-                        <p class="service-item-desc">Apuração precisa de fissuras, infiltrações, eflorescências, corrosão de armaduras e recalques de fundação com indicação da conduta técnica correta.</p>
-                        <a href="servicos.html" class="service-link">
-                            <span>Saiba mais</span>
-                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Serviço 3 -->
-                    <div class="service-item fade-in-up" style="animation-delay: 300ms;">
-                        <div class="service-icon-wrapper">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9 12H15M9 16H13M17 21H7C5.89543 21 5 20.1046 5 19V5C5 3.89543 5.89543 3 7 3H14L19 8V19C19 20.1046 18.1046 21 17 21Z"
-                                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <h3 class="service-item-title">Perícia Técnica & Seguros</h3>
-                        <p class="service-item-desc">Investigação técnica com valor probatório para fins judiciais, extrajudiciais, seguradoras e suporte pericial aos escritórios de advocacia.</p>
-                        <a href="servicos.html" class="service-link">
-                            <span>Saiba mais</span>
-                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Serviço 4 -->
-                    <div class="service-item fade-in-up" style="animation-delay: 400ms;">
-                        <div class="service-icon-wrapper">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9 11L12 14L22 4M21 12V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16"
-                                    stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <h3 class="service-item-title">Consultoria, Auditoria & NBR 14653</h3>
-                        <p class="service-item-desc">Consultoria técnica para construtoras e incorporadoras, auditoria documental de obras e avaliação técnica patrimonial de imóveis.</p>
-                        <a href="servicos.html" class="service-link">
-                            <span>Saiba mais</span>
-                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 1L13 5M13 5L9 9M13 5H1" stroke="currentColor" stroke-width="1"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <!-- Bolinhas de Indicação Mobile -->
-                <div class="carousel-dots-mobile" aria-label="Indicadores de Serviços"></div>
-            </div>
-        </div>
-    </section>
 
     <!-- Para Quem Entregamos -->
-    <section class="projects-section light-bg" id="publico">
+    <section class="projects-section dark-bg" id="publico">
         <div class="section-container">
-            <div class="section-header text-center fade-in-up">
-                <h2 class="section-title text-dark">Para Quem Entregamos</h2>
-                <p class="section-subtitle text-dark-sec">Soluções de engenharia diagnóstica personalizadas para cada perfil de tomada de decisão.</p>
+            <div class="section-header text-center">
+                <h2 class="section-title">Para Quem Entregamos</h2>
+                <p class="section-subtitle">Soluções de engenharia diagnóstica personalizadas para cada perfil de tomada de decisão.</p>
             </div>
 
             <!-- Grid de Públicos em Carrossel Mobile -->
-            <div class="carousel-mobile-container" data-carousel="audience" data-lenis-prevent>
+            <div class="carousel-mobile-container" data-carousel="audience">
                 <div class="audience-grid carousel-track">
                     <!-- Público 1 -->
-                    <div class="audience-card reveal" style="transition-delay: 60ms;">
+                    <div class="audience-card">
                         <h4 class="audience-card-title">Proprietários de Imóveis</h4>
                         <p class="audience-card-desc">Segurança antes de comprar, vender ou reformar. Esclarecemos se trincas e infiltrações representam riscos e fornecemos laudos defensáveis.</p>
                     </div>
 
                     <!-- Público 2 -->
-                    <div class="audience-card reveal" style="transition-delay: 130ms;">
+                    <div class="audience-card">
                         <h4 class="audience-card-title">Construtoras & Incorporadoras</h4>
                         <p class="audience-card-desc">Consultoria preventiva durante e após a obra, auditoria documental de conformidade e blindagem técnica contra passivos futuros.</p>
                     </div>
 
                     <!-- Público 3 -->
-                    <div class="audience-card reveal" style="transition-delay: 200ms;">
+                    <div class="audience-card">
                         <h4 class="audience-card-title">Síndicos & Condomínios</h4>
                         <p class="audience-card-desc">Inspeção predial preventiva, laudos de recebimento de áreas comuns e pareceres técnicos para acionar garantias de construtoras.</p>
                     </div>
 
                     <!-- Público 4 -->
-                    <div class="audience-card reveal" style="transition-delay: 270ms;">
+                    <div class="audience-card">
                         <h4 class="audience-card-title">Escritórios de Advocacia</h4>
                         <p class="audience-card-desc">Assistência técnica pericial, formulação de quesitos, impugnações e laudos com alto valor probatório em processos cíveis e cautelares.</p>
                     </div>
 
                     <!-- Público 5 -->
-                    <div class="audience-card reveal" style="transition-delay: 340ms;">
+                    <div class="audience-card">
                         <h4 class="audience-card-title">Seguradoras</h4>
                         <p class="audience-card-desc">Vistorias prévias de risco e regulação técnica de sinistros em edificações, com apuração de nexo causal e responsabilidade.</p>
                     </div>
 
                     <!-- Card de Chamada Direta -->
-                    <div class="audience-card reveal" style="transition-delay: 410ms; background-color: var(--color-charcoal); border-color: transparent;">
-                        <h4 class="audience-card-title" style="color: #FFFFFF;">Fale Diretamente Conosco</h4>
-                        <p class="audience-card-desc" style="color: #A1A1AA;">Envie sua demanda para análise inicial e receba uma orientação técnica personalizada com a Eng.ª Camila.</p>
-                        <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" style="color: #E4E4E7; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-top: auto; display: inline-flex; align-items: center; gap: 8px;">
-                            Chamar no WhatsApp <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+                    <div class="audience-card audience-card-cta">
+                        <h4 class="audience-card-title">Fale Diretamente Conosco</h4>
+                        <p class="audience-card-desc">Envie sua demanda para análise inicial e receba uma orientação técnica personalizada com a Eng.ª Camila.</p>
+                        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto;">
+                            <a href="contato.html" class="btn-brand-blue" style="min-height: 44px; padding: 10px 20px; font-size: 12px;">
+                                Solicitar Atendimento
+                            </a>
+                            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" style="color: var(--color-accent); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 8px;">
+                                <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <!-- Bolinhas de Indicação Mobile -->
                 <div class="carousel-dots-mobile" aria-label="Indicadores de Públicos"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Casos Atendidos -->
-    <section class="projects-section light-bg-accent" id="casos">
-        <div class="section-container">
-            <div class="section-header text-center fade-in-up">
-                <h2 class="section-title text-dark">Demandas Frequentes</h2>
-                <p class="section-subtitle text-dark-sec">Exemplos práticos de atuações realizadas com precisão técnica e segurança jurídica.</p>
-            </div>
-
-            <!-- Galeria de Casos -->
-            <div class="projects-grid">
-                <!-- Caso 1 -->
-                <div class="project-card fade-in-up" data-category="vistoria">
-                    <div class="project-img-wrapper">
-                        <img src="img/img/vistoria_cautelar.webp" alt="Vistoria Cautelar de Vizinhança em imóveis vizinhos a obras"
-                            loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h4 class="project-name">Vistoria Cautelar de Vizinhança</h4>
-                        <span class="project-cat">Proteção contra danos de obras vizinhas</span>
-                    </div>
-                </div>
-
-                <!-- Caso 2 -->
-                <div class="project-card fade-in-up" data-category="pericia" style="animation-delay: 150ms;">
-                    <div class="project-img-wrapper">
-                        <img src="img/img/infiltracao.webp" alt="Perícia em Manifestações Patológicas" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h4 class="project-name">Diagnóstico de Fissuras & Infiltrações</h4>
-                        <span class="project-cat">Apuração de causa raiz e responsabilidade</span>
-                    </div>
-                </div>
-
-                <!-- Caso 3 -->
-                <div class="project-card fade-in-up" data-category="inspecao" style="animation-delay: 300ms;">
-                    <div class="project-img-wrapper">
-                        <img src="img/img/clean.webp"
-                            alt="Inspeção Predial e Entrega de Obra" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h4 class="project-name">Vistoria de Entrega de Obra</h4>
-                        <span class="project-cat">Conformidade e recebimento de edificação</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Botão Solicitar -->
-            <div class="projects-actions text-center fade-in-up">
-                <a href="#contato" class="btn-dark-outline">Solicitar Diagnóstico Técnico</a>
             </div>
         </div>
     </section>
@@ -385,7 +284,7 @@
         <div class="section-container">
             <div class="work-grid">
                 <!-- Coluna Esquerda: Metodologia -->
-                <div class="work-col-left fade-in-left">
+                <div class="work-col-left">
                     <h2 class="section-title">Nossa Metodologia</h2>
                     <p class="work-intro-text">Combinamos fundamentação normativa, investigação técnica in loco e independência profissional para entregar laudos irrefutáveis.</p>
 
@@ -429,10 +328,10 @@
                 </div>
 
                 <!-- Coluna Direita: Imagem e Painel de Diferenciais -->
-                <div class="work-col-right fade-in-right" style="animation-delay: 200ms;">
+                <div class="work-col-right">
                     <div class="work-img-wrapper">
-                        <img src="img/img/nivelamento.webp"
-                            alt="Verificação técnica de prumo e nivelamento em vistoria" loading="lazy">
+                        <img src="img/real/camila_fissurometro_mao.jpg"
+                            alt="Medição técnica e mapeamento de fissura com fissurômetro de precisão em vistoria predial" loading="lazy">
 
                         <!-- Painel Sobreposto -->
                         <div class="diff-overlay-panel">
@@ -452,7 +351,7 @@
                                         <path d="M3 8L6.5 11.5L13 4.5" stroke="currentColor" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <span>Diagnóstico de causa raiz de manifestações patológicas</span>
+                                    <span>Diagnóstico de patologias com identificação técnica da causa</span>
                                 </li>
                                 <li class="diff-item">
                                     <svg class="check-icon" viewBox="0 0 16 16" fill="none"
@@ -489,12 +388,12 @@
     <!-- Depoimentos -->
     <section class="testimonials-section light-bg-accent" id="depoimentos">
         <div class="section-container relative">
-            <div class="section-header text-center fade-in-up">
+            <div class="section-header text-center">
                 <h2 class="section-title text-dark">O que dizem os clientes</h2>
             </div>
 
             <!-- Carrossel de Depoimentos -->
-            <div class="testimonial-slider-container fade-in-up">
+            <div class="testimonial-slider-container">
                 <!-- Seta Esquerda -->
                 <button class="nav-arrow prev-arrow" id="prevTestimonial" aria-label="Depoimento anterior">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -533,7 +432,7 @@
                         <!-- Depoimento 3 -->
                         <div class="testimonial-slide" data-index="2">
                             <p class="testimonial-text">
-                                A Bault realizou o diagnóstico de manifestações patológicas no nosso condomínio. A indicação precisa
+                                A Bault realizou o diagnóstico de patologias no nosso condomínio. A indicação precisa
                                 entre reparo urgente e manutenção preventiva nos deu total tranquilidade para planejar os investimentos
                                 e prestar contas aos moradores.
                             </p>
@@ -561,112 +460,84 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="footer-section dark-bg" id="contato">
+
+    <!-- Chamada Visual "Fale conosco" sobre Imagem -->
+    <section class="visual-cta-section">
+        <div class="visual-cta-frame">
+            <a href="contato.html" class="visual-cta-card" aria-label="Fale conosco - Solicitar orçamento">
+                <img src="img/img/fachada.webp" alt="Fale com a Bault Engenharia - Diagnóstico Técnico e Laudos" class="visual-cta-img" loading="lazy">
+                <div class="visual-cta-overlay">
+                    <span class="visual-cta-title">Fale conosco</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé Padronizado (Sem Formulário) -->
+    <footer class="footer-section dark-bg">
         <div class="section-container">
-            <div class="footer-grid">
-                <!-- Coluna 1: Marca e Redes Sociais -->
-                <div class="footer-col brand-col fade-in-up">
+            <div class="footer-grid-clean">
+                <!-- Coluna 1: Marca e Redes Sociais em Ícones Clicáveis -->
+                <div class="footer-col brand-col">
                     <span class="logo footer-logo">BAULT ENGENHARIA</span>
                     <p class="footer-brand-text">Segurança e diagnóstico técnico do estado real de edificações em todo o Mato Grosso do Sul. Laudos claros, precisos e com respaldo legal.</p>
                     <div class="social-links">
                         <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer"
-                            aria-label="Instagram da Bault Engenharia">
-                            <span>Instagram</span>
+                            class="social-icon-btn" aria-label="Instagram da Bault Engenharia">
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
                         <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer"
-                            aria-label="WhatsApp da Bault Engenharia">
-                            <span>WhatsApp</span>
+                            class="social-icon-btn" aria-label="WhatsApp da Bault Engenharia">
+                            <i class="fa-brands fa-whatsapp"></i>
                         </a>
-                        <a href="mailto:camila@baultengenharia.com" aria-label="Envie um e-mail">
-                            <span>E-mail</span>
+                        <a href="mailto:camila@baultengenharia.com" class="social-icon-btn" aria-label="Envie um e-mail">
+                            <i class="fa-solid fa-envelope"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Coluna 2: Links -->
-                <div class="footer-col links-col fade-in-up" style="animation-delay: 100ms;">
+                <!-- Coluna 2: Navegação Padronizada -->
+                <div class="footer-col links-col">
                     <h4 class="footer-title">Navegação</h4>
                     <ul class="footer-links-list">
                         <li><a href="index.html">Início</a></li>
                         <li><a href="#entregamos">O que Entregamos</a></li>
+                        <li><a href="#atuacao">Áreas de Atuação</a></li>
                         <li><a href="servicos.html">Serviços</a></li>
                         <li><a href="#publico">Para Quem</a></li>
                         <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
 
                 <!-- Coluna 3: Contatos Oficiais -->
-                <div class="footer-col contact-col fade-in-up" style="animation-delay: 200ms;">
-                    <h4 class="footer-title">Contato</h4>
+                <div class="footer-col contact-col">
+                    <h4 class="footer-title">Contato Oficial</h4>
                     <ul class="footer-contact-list">
                         <li class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3 5H21C22.1 5 23 5.9 23 7V17C23 18.1 22.1 19 21 19H3C1.9 19 1 18.1 1 17V7C1 5.9 1.9 5 3 5Z"
-                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M23 7L12 14L1 7" stroke="currentColor" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <a href="mailto:camila@baultengenharia.com" style="color: inherit;">camila@baultengenharia.com</a>
+                            <i class="fa-solid fa-envelope contact-icon"></i>
+                            <a href="mailto:camila@baultengenharia.com" class="contact-email-link">camila@baultengenharia.com</a>
                         </li>
                         <li class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M22 16.92V19.92C22 20.47 21.53 20.94 20.97 20.99C18.84 20.76 16.81 20.02 14.96 18.89C12.97 17.7 11.28 15.93 10.1 13.91C8.96 12.02 8.22 9.95 8 7.78C7.95 7.21 8.41 6.72 8.97 6.72H11.97C12.47 6.72 12.89 7.08 12.96 7.57C13.09 8.51 13.34 9.42 13.7 10.28C13.84 10.6 13.76 10.97 13.52 11.21L12.25 12.51C13.34 14.47 14.94 16.1 16.87 17.2L18.14 15.9C18.38 15.66 18.74 15.58 19.06 15.72C19.92 16.08 20.83 16.32 21.78 16.45C22.28 16.52 22.64 16.94 22.64 17.44V16.92Z"
-                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" style="color: inherit;">(67) 99283-8880</a>
+                            <i class="fa-brands fa-whatsapp contact-icon"></i>
+                            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer">(67) 99283-8880</a>
                         </li>
                         <li class="contact-item">
-                            <i class="fa-brands fa-instagram contact-icon" style="font-size: 16px; margin-top: 3px;"></i>
-                            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" style="color: inherit;">@baultengenharia</a>
+                            <i class="fa-brands fa-instagram contact-icon"></i>
+                            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer">@baultengenharia</a>
                         </li>
                         <li class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z"
-                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <span>Campo Grande, MS | Todo o Estado</span>
+                            <i class="fa-solid fa-location-dot contact-icon"></i>
+                            <span>Campo Grande, MS | Atendimento Estadual</span>
                         </li>
                     </ul>
                 </div>
-
-                <!-- Coluna 4: Formulário Fale Conosco -->
-                <div class="footer-col form-col fade-in-up" style="animation-delay: 300ms;">
-                    <h4 class="footer-title">Fale Conosco</h4>
-                    <form class="footer-contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Nome Completo</label>
-                            <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="sr-only">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="Seu melhor e-mail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Mensagem</label>
-                            <textarea id="message" name="message" placeholder="Descreva sua edificação ou a necessidade técnica..."
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                        <div class="form-feedback" id="formFeedback"></div>
-                    </form>
-                </div>
             </div>
 
-            <!-- Direitos Autorais e CREA -->
+            <!-- Direitos Autorais, CREA e Dados da Empresa -->
             <div class="footer-bottom text-center">
                 <p class="copyright-text">
-                    © 2026 Bault Engenharia. Todos os direitos reservados. | ENG.ª CIVIL CAMILA BALTUILHE VARGAS DO NASCIMENTO | CREA-MS 66082
+                    © 2026 Bault Engenharia. Todos os direitos reservados. | Camila Baltuilhe Vargas do Nascimento LTDA | CNPJ: 47.055.155/0001-99
                 </p>
             </div>
         </div>
@@ -677,10 +548,8 @@
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-float-tooltip">Falar no WhatsApp</span>
     </a>
-
-    <!-- Lenis Smooth Scroll CDN -->
-    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <!-- JavaScript -->
+    <script src="lenis.min.js"></script>
     <script src="script.js"></script>
 
 </body>

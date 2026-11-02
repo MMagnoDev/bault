@@ -1,61 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     /* ==========================================================================
-       ROLAGEM SUAVE (LENIS SMOOTH SCROLL)
+       ROLAGEM SUAVE (LENIS SMOOTH SCROLL + ÂNCORAS)
        ========================================================================== */
-    try {
-        if (typeof Lenis !== 'undefined') {
-            const lenis = new Lenis({
-                duration: 1.2,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-                direction: 'vertical',
-                gestureDirection: 'vertical',
-                smooth: true,
-                mouseMultiplier: 1,
-                smoothTouch: false,
-                touchMultiplier: 2,
-                infinite: false,
-            });
+    let lenis = null;
+    if (typeof Lenis !== "undefined") {
+        lenis = new Lenis({
+            lerp: 0.1,
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 1.5
+        });
+        window.lenis = lenis;
 
-            function raf(time) {
-                lenis.raf(time);
-                requestAnimationFrame(raf);
-            }
+        function raf(time) {
+            lenis.raf(time);
             requestAnimationFrame(raf);
-
-            // Integrar links de ancoragem com a rolagem do Lenis para compensar o header
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetEl = document.querySelector(targetId);
-                    if (targetEl) {
-                        lenis.scrollTo(targetEl, {
-                            offset: -80, // Altura do cabeçalho fixo
-                            duration: 1.2,
-                        });
-                    }
-                });
-            });
-        } else {
-            console.warn("Lenis is not defined. Falling back to native scrolling.");
         }
-    } catch (error) {
-        console.error("Lenis smooth scroll failed to initialize:", error);
+        requestAnimationFrame(raf);
     }
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+                e.preventDefault();
+                if (lenis) {
+                    lenis.scrollTo(targetEl, { offset: -80 });
+                } else {
+                    const top = targetEl.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
     /* ==========================================================================
-       MENU FIXO COM SCROLL
+       MENU FIXO COM SCROLL (PASSIVE & OTIMIZADO)
        ========================================================================== */
     const header = document.getElementById("header");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
+    if (header) {
+        let isHeaderScrolled = window.scrollY > 50;
+        if (isHeaderScrolled) header.classList.add("scrolled");
+
+        window.addEventListener("scroll", () => {
+            const shouldBeScrolled = window.scrollY > 50;
+            if (shouldBeScrolled !== isHeaderScrolled) {
+                isHeaderScrolled = shouldBeScrolled;
+                header.classList.toggle("scrolled", isHeaderScrolled);
+            }
+        }, { passive: true });
+    }
 
     /* ==========================================================================
        MENU MOBILE (OPEN / CLOSE)
@@ -66,21 +63,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileLinks = document.querySelectorAll(".mobile-link");
 
     function openMobileMenu() {
+        if (!mobilePanel) return;
         mobilePanel.classList.add("open");
         mobilePanel.setAttribute("aria-hidden", "false");
-        menuBtn.setAttribute("aria-expanded", "true");
+        if (menuBtn) menuBtn.setAttribute("aria-expanded", "true");
         document.body.style.overflow = "hidden"; // Previne scroll do fundo
+        if (window.lenis) window.lenis.stop();
     }
 
     function closeMobileMenu() {
+        if (!mobilePanel) return;
         mobilePanel.classList.remove("open");
         mobilePanel.setAttribute("aria-hidden", "true");
-        menuBtn.setAttribute("aria-expanded", "false");
+        if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
+        if (window.lenis) window.lenis.start();
     }
 
-    menuBtn.addEventListener("click", openMobileMenu);
-    closeBtn.addEventListener("click", closeMobileMenu);
+    if (menuBtn) menuBtn.addEventListener("click", openMobileMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMobileMenu);
     
     mobileLinks.forEach(link => {
         link.addEventListener("click", closeMobileMenu);
@@ -114,6 +115,120 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+
+    /* ==========================================================================
+       CARROSSEL DE ÁREAS DE ATUAÇÃO (AUTOPLAY + 1 NO MOBILE / 2 NO DESKTOP + SETAS)
+       ========================================================================== */
+    const actingWrapper = document.getElementById("actingCarousel");
+    const actingTrack = document.getElementById("actingTrack");
+    const prevActingBtn = document.getElementById("prevActing");
+    const nextActingBtn = document.getElementById("nextActing");
+
+    if (actingTrack && prevActingBtn && nextActingBtn) {
+        const actingCards = Array.from(actingTrack.querySelectorAll(".acting-card"));
+        let actingIndex = 0;
+        let actingAutoplayTimer = null;
+        let isActingHovered = false;
+        let actingResumeTimeout = null;
+
+        function getActingMaxIndex() {
+            const isMobile = window.innerWidth <= 767;
+            const visibleCount = isMobile ? 1 : 3;
+            return Math.max(0, actingCards.length - visibleCount);
+        }
+
+        function updateActingCarousel() {
+            const maxIdx = getActingMaxIndex();
+            if (actingIndex > maxIdx) actingIndex = 0;
+            if (actingIndex < 0) actingIndex = maxIdx;
+
+            const isMobile = window.innerWidth <= 767;
+            if (isMobile) {
+                actingTrack.style.transform = `translate3d(-${actingIndex * 100}%, 0, 0)`;
+            } else {
+                const cardWidth = actingCards[0]?.offsetWidth || 0;
+                const gap = 24;
+                const offset = actingIndex * (cardWidth + gap);
+                actingTrack.style.transform = `translate3d(-${offset}px, 0, 0)`;
+            }
+        }
+
+        function nextActingSlide() {
+            const maxIdx = getActingMaxIndex();
+            actingIndex = actingIndex >= maxIdx ? 0 : actingIndex + 1;
+            updateActingCarousel();
+        }
+
+        function startActingAutoplay() {
+            stopActingAutoplay();
+            actingAutoplayTimer = setInterval(() => {
+                if (!isActingHovered) {
+                    nextActingSlide();
+                }
+            }, 3800);
+        }
+
+        function stopActingAutoplay() {
+            if (actingAutoplayTimer) {
+                clearInterval(actingAutoplayTimer);
+                actingAutoplayTimer = null;
+            }
+        }
+
+        function pauseActingTemporarily() {
+            stopActingAutoplay();
+            if (actingResumeTimeout) clearTimeout(actingResumeTimeout);
+            actingResumeTimeout = setTimeout(() => {
+                startActingAutoplay();
+            }, 4500);
+        }
+
+        prevActingBtn.addEventListener("click", () => {
+            pauseActingTemporarily();
+            const maxIdx = getActingMaxIndex();
+            actingIndex = actingIndex <= 0 ? maxIdx : actingIndex - 1;
+            updateActingCarousel();
+        });
+
+        nextActingBtn.addEventListener("click", () => {
+            pauseActingTemporarily();
+            nextActingSlide();
+        });
+
+        if (actingWrapper) {
+            actingWrapper.addEventListener("mouseenter", () => {
+                isActingHovered = true;
+            });
+            actingWrapper.addEventListener("mouseleave", () => {
+                isActingHovered = false;
+            });
+        }
+
+        let touchStartX = 0;
+        actingTrack.addEventListener("touchstart", (e) => {
+            pauseActingTemporarily();
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        actingTrack.addEventListener("touchend", (e) => {
+            pauseActingTemporarily();
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) {
+                const maxIdx = getActingMaxIndex();
+                if (diff > 0) {
+                    actingIndex = actingIndex >= maxIdx ? 0 : actingIndex + 1;
+                } else {
+                    actingIndex = actingIndex <= 0 ? maxIdx : actingIndex - 1;
+                }
+                updateActingCarousel();
+            }
+        }, { passive: true });
+
+        window.addEventListener("resize", updateActingCarousel);
+        updateActingCarousel();
+        startActingAutoplay();
+    }
 
     /* ==========================================================================
        CARROSSEL DE DEPOIMENTOS (TESTIMONIALS SLIDER - AUTOMÁTICO E CONTROLÁVEL)
@@ -239,55 +354,99 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ==========================================================================
-       FORMULÁRIO DE CONTATO (SIMULADO)
+       FORMULÁRIOS DE CONTATO (PÁGINA DEDICADA E RODAPÉ)
        ========================================================================== */
-    const contactForm = document.getElementById("contactForm");
-    const formFeedback = document.getElementById("formFeedback");
+    const contactPageForm = document.getElementById("contactPageForm");
+    const contactPageFeedback = document.getElementById("contactPageFeedback");
 
-    if (contactForm && formFeedback) {
-        contactForm.addEventListener("submit", (e) => {
+    if (contactPageForm && contactPageFeedback) {
+        contactPageForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            
-            formFeedback.textContent = "Enviando mensagem...";
-            formFeedback.className = "form-feedback";
-            formFeedback.style.display = "block";
+            const nome = document.getElementById("pageName")?.value.trim() || "";
+            const tel = document.getElementById("pagePhone")?.value.trim() || "";
+            const servico = document.getElementById("pageService")?.value || "";
+
+            if (!nome || !tel || !servico) {
+                contactPageFeedback.textContent = "Por favor, preencha Nome, Telefone e Serviço.";
+                contactPageFeedback.className = "form-feedback error";
+                contactPageFeedback.style.display = "block";
+                return;
+            }
+
+            contactPageFeedback.textContent = "Enviando solicitação...";
+            contactPageFeedback.className = "form-feedback";
+            contactPageFeedback.style.display = "block";
 
             setTimeout(() => {
-                formFeedback.textContent = "Obrigado! Sua mensagem foi enviada com sucesso.";
-                formFeedback.className = "form-feedback success";
-                contactForm.reset();
-            }, 1200);
+                contactPageFeedback.innerHTML = `<strong>Obrigado, ${nome}!</strong> Sua solicitação foi recebida. Retornaremos em breve pelo telefone <strong>${tel}</strong>.`;
+                contactPageFeedback.className = "form-feedback success";
+                contactPageForm.reset();
+            }, 700);
         });
     }
 
-    /* ==========================================================================
-       REVEAL ON SCROLL (INTERSECTION OBSERVER)
-       ========================================================================== */
-    const observerOptions = {
-        root: null,
-        rootMargin: "0px 0px -40px 0px",
-        threshold: 0.08
-    };
+    const footerForms = document.querySelectorAll(".footer-contact-form");
+    footerForms.forEach(form => {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const feedback = form.querySelector(".form-feedback");
+            const nome = form.querySelector('[name="name"]')?.value.trim() || "";
+            const email = form.querySelector('[name="email"]')?.value.trim() || "";
+            const tel = form.querySelector('[name="phone"]')?.value.trim() || "";
+            const servico = form.querySelector('[name="service"]')?.value || "";
+            const msg = form.querySelector('[name="message"]')?.value.trim() || "";
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target);
+            if (!feedback) return;
+
+            if (!nome || !email || !tel || !servico || !msg) {
+                feedback.textContent = "Por favor, preencha todos os campos obrigatórios.";
+                feedback.className = "form-feedback error";
+                feedback.style.display = "block";
+                return;
+            }
+
+            feedback.textContent = "Enviando solicitação...";
+            feedback.className = "form-feedback";
+            feedback.style.display = "block";
+
+            setTimeout(() => {
+                feedback.innerHTML = `<strong>Obrigado, ${nome}!</strong> Recebemos sua mensagem e entraremos em contato em breve.`;
+                feedback.className = "form-feedback success";
+                form.reset();
+            }, 700);
+        });
+    });
+
+    /* ==========================================================================
+       ACORDEÃO DE PROPÓSITO, VISÃO E VALORES (SOBRE NÓS)
+       ========================================================================== */
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
+    accordionHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+            const item = header.parentElement;
+            const isOpen = item.classList.contains("active");
+
+            // Fecha outros itens para navegação limpa
+            accordionHeaders.forEach(h => {
+                h.parentElement.classList.remove("active");
+                h.setAttribute("aria-expanded", "false");
+            });
+
+            if (!isOpen) {
+                item.classList.add("active");
+                header.setAttribute("aria-expanded", "true");
             }
         });
-    }, observerOptions);
+    });
 
+    /* ==========================================================================
+       ELEMENTOS FIXOS (SEM REVEAL ON SCROLL)
+       ========================================================================== */
     const animatedElements = document.querySelectorAll(
-        ".fade-in-up, .fade-in, .fade-in-left, .fade-in-right, .reveal, .entregamos-box, .service-item, .audience-card, .step-item, .service-detail-item"
+        ".fade-in-up, .fade-in, .fade-in-left, .fade-in-right, .reveal, .soft-fade, .entregamos-box, .service-item, .audience-card, .step-item, .service-detail-item"
     );
-
     animatedElements.forEach(el => {
-        // Garantir suporte a delay via inline style
-        if (el.style.animationDelay && !el.style.transitionDelay) {
-            el.style.transitionDelay = el.style.animationDelay;
-        }
-        revealObserver.observe(el);
+        el.classList.add("active", "visible");
     });
 
     /* ==========================================================================

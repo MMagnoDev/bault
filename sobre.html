@@ -23,8 +23,24 @@
 
         /* Subhero da página interna */
         .page-hero {
-            padding: 160px 0 80px;
-            background: var(--color-dark, #1a1a1a);
+            padding: 180px 0 110px;
+            background-color: var(--color-charcoal, #04080A);
+            background-image: linear-gradient(to right, rgba(4, 8, 10, 0.94) 0%, rgba(4, 8, 10, 0.82) 50%, rgba(4, 8, 10, 0.45) 100%), url('img/img_hero.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            border-bottom: 1px solid rgba(90, 180, 196, 0.15);
+        }
+
+        .page-hero .section-container {
+            width: 100%;
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         .page-hero-inner {
@@ -63,14 +79,21 @@
         /* Quem Somos */
         .quem-somos-section {
             padding: 100px 0;
-            background: var(--color-dark, #1a1a1a);
+            background: var(--color-charcoal, #04080A);
         }
 
         .quem-somos-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: clamp(48px, 6vw, 88px);
+            align-items: stretch;
+        }
+
+        .quem-somos-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4px 0;
         }
 
         .quem-somos-text h2 {
@@ -101,6 +124,7 @@
             border-radius: 4px;
             display: block;
             object-fit: cover;
+            object-position: center top;
             aspect-ratio: 3/4;
         }
 
@@ -169,7 +193,7 @@
         }
 
         .base-img-col {
-            background: #1a1a1a;
+            background: var(--color-charcoal-sec, #070E12);
             border-radius: 4px 0 0 4px;
             overflow: hidden;
         }
@@ -181,7 +205,7 @@
         }
 
         .base-card {
-            background: #1a1a1a;
+            background: var(--color-charcoal-sec, #070E12);
             padding: 40px 32px;
             display: flex;
             flex-direction: column;
@@ -236,7 +260,7 @@
         /* Números da empresa */
         .numeros-section {
             padding: 100px 0;
-            background: var(--color-dark, #1a1a1a);
+            background: var(--color-charcoal, #04080A);
         }
 
         .numeros-grid {
@@ -251,7 +275,7 @@
 
         .numero-item {
             padding: 48px 40px;
-            background: var(--color-dark, #1a1a1a);
+            background: var(--color-charcoal, #04080A);
             text-align: center;
         }
 
@@ -304,7 +328,17 @@
         /* Responsivo */
         @media (max-width: 900px) {
             .page-hero {
-                padding: 130px 0 60px;
+                padding: 120px 0 60px;
+                min-height: 100vh;
+                min-height: 100svh;
+                background-image: linear-gradient(to bottom, rgba(4, 8, 10, 0.42) 0%, rgba(4, 8, 10, 0.68) 55%, rgba(4, 8, 10, 0.92) 100%), url('img/img_hero.png');
+                background-position: center center;
+                text-align: center;
+            }
+            .page-hero-inner,
+            .page-hero p {
+                margin-left: auto;
+                margin-right: auto;
             }
             .quem-somos-section {
                 padding: 70px 0;
@@ -320,13 +354,23 @@
             }
             .quem-somos-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 36px;
             }
             .quem-somos-img-col {
                 order: -1;
+                max-width: 86%;
+                margin: 0 auto;
+                width: 100%;
             }
             .quem-somos-img-col img {
-                aspect-ratio: 4/3;
+                aspect-ratio: 3/4;
+                object-position: center top;
+            }
+            .quem-somos-text h2 {
+                margin-bottom: 20px;
+            }
+            .quem-somos-text p {
+                text-align: left;
             }
             .base-grid {
                 grid-template-columns: 1fr;
@@ -374,7 +418,7 @@
 
 <body>
 
-    <!-- Cabeçalho (Navbar) -->
+    <!-- Cabeçalho (Navbar Padronizado) -->
     <header class="main-header" id="header">
         <div class="header-container">
             <nav class="nav-menu nav-left">
@@ -389,8 +433,8 @@
             </div>
 
             <nav class="nav-menu nav-right">
-                <a href="sobre.html" class="nav-link" style="opacity:1;">Sobre Nós</a>
-                <a href="index.html#contato" class="nav-link">Contato</a>
+                <a href="sobre.html" class="nav-link" style="color: var(--color-accent);">Sobre Nós</a>
+                <a href="contato.html" class="nav-link">Contato</a>
             </nav>
 
             <!-- Mobile Menu Trigger -->
@@ -401,68 +445,84 @@
         </div>
     </header>
 
-    <!-- Mobile Navigation Panel -->
+    <!-- Mobile Navigation Panel Padronizado -->
     <div class="mobile-nav-panel" id="mobilePanel" aria-hidden="true">
         <button class="mobile-menu-close" aria-label="Fechar menu" id="closeBtn">&times;</button>
         <nav class="mobile-menu-links">
             <a href="index.html" class="mobile-link">Início</a>
+            <a href="index.html#entregamos" class="mobile-link">O que Entregamos</a>
+            <a href="index.html#atuacao" class="mobile-link">Áreas de Atuação</a>
             <a href="servicos.html" class="mobile-link">Serviços</a>
-            <a href="index.html#casos" class="mobile-link">Casos</a>
-            <a href="sobre.html" class="mobile-link">Sobre Nós</a>
-            <a href="index.html#contato" class="mobile-link">Contato</a>
+            <a href="index.html#publico" class="mobile-link">Para Quem</a>
+            <a href="sobre.html" class="mobile-link" style="color: var(--color-accent);">Sobre Nós</a>
+            <a href="contato.html" class="mobile-link">Contato</a>
         </nav>
+        <div class="mobile-social-icons">
+            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram da Bault Engenharia">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="WhatsApp da Bault Engenharia">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="mailto:camila@baultengenharia.com" class="social-icon-btn" aria-label="E-mail da Bault Engenharia">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
     </div>
 
     <!-- Hero da Página -->
     <section class="page-hero">
         <div class="section-container">
-            <div class="page-hero-inner fade-in-left">
+            <div class="page-hero-inner">
                 <h1>Segurança e diagnóstico técnico do estado real da sua edificação.</h1>
                 <p>Nascemos para substituir a incerteza por respostas técnicas, documentadas e defensáveis, fornecendo o respaldo técnico que você precisa para tomar decisões seguras em todo o Mato Grosso do Sul.</p>
             </div>
         </div>
     </section>
 
-    <!-- Quem Somos -->
+    <!-- Quem Somos (Com Foto Real da Camila e Texto Ajustado) -->
     <section class="quem-somos-section">
         <div class="section-container">
             <div class="quem-somos-grid">
-                <!-- Texto -->
-                <div class="quem-somos-text fade-in-left">
-                    <h2>Técnica a serviço de decisões seguras</h2>
-                    <p>
-                        A Bault Engenharia é especializada em diagnóstico técnico e segurança predial, entregando avaliações precisas sobre o estado real de edificações residenciais, comerciais e institucionais em todo o Mato Grosso do Sul.
-                    </p>
-                    <p>
-                        Sob a liderança da <strong>Eng.ª Civil Camila Baltuilhe Vargas do Nascimento (CREA-MS 66082)</strong>, atuamos com rigor normativo, imparcialidade e método investigativo detalhado em cada inspeção e laudo elaborado.
-                    </p>
-                    <p>
-                        Na prática, nosso trabalho permite que o cliente troque a dúvida angustiante (<em>"essa rachadura é grave?", "esse imóvel esconde vícios ocultos?", "a obra vizinha causou abalo estrutural?"</em>) por um parecer técnico conclusivo e juridicamente defensável.
-                    </p>
-                    <p>
-                        Seja para negociar um imóvel com segurança, acionar garantias construtivas, reformar com respaldo técnico, litigar em juízo ou simplesmente dormir tranquilo conhecendo a saúde real da sua edificação: entregamos a técnica que ilumina a sua decisão.
-                    </p>
+                <!-- Coluna Esquerda (Desktop) / Topo (Celular): Foto vertical limpa -->
+                <div class="quem-somos-img-col">
+                    <img src="img/img/sobre.webp" alt="Eng.ª Civil Camila Baltuilhe Vargas do Nascimento, CREA-MS 66082" loading="lazy">
                 </div>
 
-                <!-- Foto -->
-                <div class="quem-somos-img-col fade-in-right" style="animation-delay: 200ms;">
-                    <img src="img/img/sobre.webp" alt="Eng.ª Civil Camila Baltuilhe Vargas do Nascimento, CREA-MS 66082" loading="lazy">
-                    <div class="engenheira-label">
-                        <strong>ENG.ª CIVIL CAMILA BALTUILHE VARGAS DO NASCIMENTO</strong>
-                        <span>CREA-MS 66082</span>
+                <!-- Coluna Direita (Desktop) / Abaixo da Foto (Celular): Título no topo e parágrafos na base -->
+                <div class="quem-somos-text">
+                    <h2>Técnica a serviço de decisões seguras</h2>
+                    <div class="quem-somos-paragraphs">
+                        <p>
+                            A Bault Engenharia é especializada em diagnóstico técnico e segurança predial, entregando avaliações precisas sobre o estado real de edificações residenciais, comerciais e institucionais em todo o Mato Grosso do Sul.
+                        </p>
+                        <p>
+                            Sob a liderança da <strong>Eng.ª Civil Camila Baltuilhe Vargas do Nascimento (CREA-MS 66082)</strong>, atuamos com rigor normativo, imparcialidade e método investigativo detalhado em cada inspeção e laudo elaborado.
+                        </p>
+                        <p>
+                            Na prática, nosso trabalho permite que o cliente troque a dúvida angustiante por um parecer técnico conclusivo e juridicamente defensável.
+                        </p>
+                        <p style="margin-bottom: 0;">
+                            Seja para negociar um imóvel com segurança, acionar garantias construtivas, reformar com respaldo técnico, litigar em juízo ou simplesmente dormir tranquilo conhecendo a saúde real da sua edificação: entregamos a técnica que ilumina a sua decisão.
+                        </p>
+                        <div style="margin-top: 28px;">
+                            <a href="contato.html" class="btn-brand-blue">
+                                Fale Conosco
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Números -->
+    <!-- Indicadores Confirmados (Sem alegações não confirmadas) -->
     <section class="numeros-section">
         <div class="section-container">
-            <div class="numeros-grid fade-in-up">
+            <div class="numeros-grid">
                 <div class="numero-item">
-                    <div class="numero-valor">+<span>200</span></div>
-                    <div class="numero-label">Laudos emitidos</div>
+                    <div class="numero-valor" style="font-size: 34px; margin-bottom: 8px;"><span>CREA</span>-MS</div>
+                    <div class="numero-label">Registro 66082 | Laudos com ART</div>
                 </div>
                 <div class="numero-item">
                     <div class="numero-valor"><span>100</span>%</div>
@@ -470,56 +530,61 @@
                 </div>
                 <div class="numero-item">
                     <div class="numero-valor"><span>MS</span></div>
-                    <div class="numero-label">Mato Grosso do Sul</div>
+                    <div class="numero-label">Atendimento em todo o Estado</div>
                 </div>
                 <div class="numero-item">
-                    <div class="numero-valor"><span>6</span></div>
-                    <div class="numero-label">Serviços especializados</div>
+                    <div class="numero-valor" style="font-size: 34px; margin-bottom: 8px;"><span>NBR</span></div>
+                    <div class="numero-label">Conformidade e valor probatório</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nossa Base: Propósito, Visão e Valores -->
-    <section class="nossa-base-section">
+    <!-- Nossa Base: Acordeão Interativo (Propósito, Visão e Valores com sinal de +) -->
+    <section class="nossa-base-section" style="background-color: var(--color-charcoal);">
         <div class="section-container">
-            <div class="nossa-base-header fade-in-up">
-                <h2>Nossa Base</h2>
-                <p>Partimos do princípio de que uma empresa humanizada é uma empresa melhor para todos.</p>
+            <div class="nossa-base-header text-center" style="max-width: 720px; margin: 0 auto 36px;">
+                <h2 style="color: #FFFFFF;">Nossa Base</h2>
+                <p style="color: var(--color-text-sec-dark); margin: 0 auto;">Partimos do princípio de que uma empresa técnica humanizada e transparente é uma empresa melhor para todos.</p>
             </div>
 
-            <div class="base-grid fade-in-up" style="animation-delay: 150ms;">
-                <!-- Imagem -->
-                <div class="base-img-col">
-                    <img src="img/img/escritorio.webp" alt="Base da Bault Engenharia" loading="lazy">
-                </div>
-
-                <!-- Propósito -->
-                <div class="base-card">
-                    <div class="base-card-label">Propósito</div>
-                    <div class="base-card-body">
+            <!-- Acordeão de 3 itens -->
+            <div class="values-accordion">
+                <!-- Item 1: Propósito -->
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span>Propósito</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
                         Que todo cliente tenha o respaldo técnico necessário para decidir sobre seu imóvel com segurança, clareza e tranquilidade.
                     </div>
                 </div>
 
-                <!-- Visão -->
-                <div class="base-card">
-                    <div class="base-card-label">Visão</div>
-                    <div class="base-card-body">
+                <!-- Item 2: Visão -->
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span>Visão</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
                         Consolidar uma cultura em que toda decisão sobre imóvel só se toma com base em informação técnica confiável e imparcial.
                     </div>
                 </div>
 
-                <!-- Valores -->
-                <div class="base-card">
-                    <div class="base-card-label">Valores</div>
-                    <div class="base-card-body">
-                        <ul>
-                            <li>Transparência</li>
-                            <li>Evolução contínua</li>
-                            <li>Rigor técnico</li>
-                            <li>Imparcialidade</li>
-                            <li>Clareza</li>
+                <!-- Item 3: Valores -->
+                <div class="accordion-item">
+                    <button class="accordion-header" type="button" aria-expanded="false">
+                        <span>Valores</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="accordion-values-list">
+                            <li><i class="fa-solid fa-check"></i> <strong>Transparência:</strong> clareza irrestrita em cada diagnóstico e conclusão pericial.</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Rigor técnico:</strong> fundamentação científica nas normas técnicas vigentes (ABNT).</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Imparcialidade:</strong> independência profissional em todas as circunstâncias.</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Evolução contínua:</strong> aprimoramento constante em ensaios e engenharia diagnóstica.</li>
+                            <li><i class="fa-solid fa-check"></i> <strong>Clareza:</strong> traduzir termos complexos em respostas práticas para a decisão do cliente.</li>
                         </ul>
                     </div>
                 </div>
@@ -527,94 +592,117 @@
         </div>
     </section>
 
-    <!-- CTA Final -->
-    <section class="sobre-cta-section">
+    <!-- Atuação em Campo: Fotografias Reais -->
+    <section class="real-photos-strip" style="padding: 70px 0; background: var(--color-charcoal-sec); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
         <div class="section-container">
-            <h2 class="fade-in-up">Pronto para tomar uma decisão segura sobre seu imóvel?</h2>
-            <p class="fade-in-up" style="animation-delay: 100ms;">Entre em contato e descubra qual serviço da Bault Engenharia é o mais adequado para a sua necessidade.</p>
-            <div class="fade-in-up" style="animation-delay: 200ms;">
-                <a href="index.html#contato" class="btn-dark-outline">Fale Conosco</a>
+            <div class="text-center" style="margin-bottom: 36px;">
+                <span style="display:inline-block; font-size: 11px; font-weight:600; letter-spacing: 2px; text-transform: uppercase; color: var(--color-accent, #5AB4C4); margin-bottom: 10px;">Engenharia na Prática</span>
+                <h3 style="font-family: var(--font-serif); font-size: clamp(24px, 2.5vw, 34px); color: #FFFFFF; font-weight: 400;">Inspeção, Tecnologia e Precisão em Campo</h3>
+            </div>
+            <div class="real-photos-grid">
+                <div class="real-photo-card">
+                    <img src="img/real/camila_inspecao_fissura.jpg" alt="Vistoria e medição de fissuras em campo com fissurômetro Trident" loading="lazy">
+                    <div class="real-photo-caption">
+                        <strong>Mapeamento de Fissuras</strong>
+                        <span>Ensaio e medição milimétrica in loco</span>
+                    </div>
+                </div>
+                <div class="real-photo-card">
+                    <img src="img/real/camila_termografia_mao.jpg" alt="Diagnóstico com câmera termográfica infravermelha" loading="lazy">
+                    <div class="real-photo-caption">
+                        <strong>Termografia Infravermelha</strong>
+                        <span>Detecção não destrutiva de infiltrações</span>
+                    </div>
+                </div>
+                <div class="real-photo-card">
+                    <img src="img/real/camila_drone_perfil.png" alt="Inspeção pericial com drone profissional" loading="lazy">
+                    <div class="real-photo-caption">
+                        <strong>Perícia Aérea com Drone</strong>
+                        <span>Mapeamento de telhados e fachadas</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="footer-section dark-bg" id="contato">
+<!-- Chamada Visual "Fale conosco" sobre Imagem -->
+    <section class="visual-cta-section">
+        <div class="visual-cta-frame">
+            <a href="contato.html" class="visual-cta-card" aria-label="Fale conosco - Solicitar orçamento">
+                <img src="img/img/fachada.webp" alt="Fale com a Bault Engenharia - Diagnóstico Técnico e Laudos" class="visual-cta-img" loading="lazy">
+                <div class="visual-cta-overlay">
+                    <span class="visual-cta-title">Fale conosco</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé Padronizado (Sem Formulário) -->
+    <footer class="footer-section dark-bg">
         <div class="section-container">
-            <div class="footer-grid">
-                <div class="footer-col brand-col fade-in-up">
+            <div class="footer-grid-clean">
+                <!-- Coluna 1: Marca e Redes Sociais em Ícones Clicáveis -->
+                <div class="footer-col brand-col">
                     <span class="logo footer-logo">BAULT ENGENHARIA</span>
                     <p class="footer-brand-text">Segurança e diagnóstico técnico do estado real de edificações em todo o Mato Grosso do Sul com rigor técnico e imparcialidade.</p>
                     <div class="social-links">
-                        <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span>Instagram</span></a>
-                        <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><span>WhatsApp</span></a>
-                        <a href="mailto:camila@baultengenharia.com" aria-label="E-mail"><span>E-mail</span></a>
+                        <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer"
+                            class="social-icon-btn" aria-label="Instagram da Bault Engenharia">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer"
+                            class="social-icon-btn" aria-label="WhatsApp da Bault Engenharia">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:camila@baultengenharia.com" class="social-icon-btn" aria-label="Envie um e-mail">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="footer-col links-col fade-in-up" style="animation-delay: 100ms;">
-                    <h4 class="footer-title">Links</h4>
+                <!-- Coluna 2: Navegação Padronizada -->
+                <div class="footer-col links-col">
+                    <h4 class="footer-title">Navegação</h4>
                     <ul class="footer-links-list">
                         <li><a href="index.html">Início</a></li>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="index.html#entregamos">O que Entregamos</a></li>
+                        <li><a href="index.html#atuacao">Áreas de Atuação</a></li>
                         <li><a href="servicos.html">Serviços</a></li>
-                        <li><a href="index.html#casos">Casos Atendidos</a></li>
-                        <li><a href="index.html#contato">Contato</a></li>
+                        <li><a href="index.html#publico">Para Quem</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-col contact-col fade-in-up" style="animation-delay: 200ms;">
-                    <h4 class="footer-title">Contato</h4>
+                <!-- Coluna 3: Contatos Oficiais -->
+                <div class="footer-col contact-col">
+                    <h4 class="footer-title">Contato Oficial</h4>
                     <ul class="footer-contact-list">
                         <li class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 5H21C22.1 5 23 5.9 23 7V17C23 18.1 22.1 19 21 19H3C1.9 19 1 18.1 1 17V7C1 5.9 1.9 5 3 5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M23 7L12 14L1 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <a href="mailto:camila@baultengenharia.com" style="color: inherit;">camila@baultengenharia.com</a>
+                            <i class="fa-solid fa-envelope contact-icon"></i>
+                            <a href="mailto:camila@baultengenharia.com" class="contact-email-link">camila@baultengenharia.com</a>
                         </li>
                         <li class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 16.92V19.92C22 20.47 21.53 20.94 20.97 20.99C18.84 20.76 16.81 20.02 14.96 18.89C12.97 17.7 11.28 15.93 10.1 13.91C8.96 12.02 8.22 9.95 8 7.78C7.95 7.21 8.41 6.72 8.97 6.72H11.97C12.47 6.72 12.89 7.08 12.96 7.57C13.09 8.51 13.34 9.42 13.7 10.28C13.84 10.6 13.76 10.97 13.52 11.21L12.25 12.51C13.34 14.47 14.94 16.1 16.87 17.2L18.14 15.9C18.38 15.66 18.74 15.58 19.06 15.72C19.92 16.08 20.83 16.32 21.78 16.45C22.28 16.52 22.64 16.94 22.64 17.44V16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer" style="color: inherit;">(67) 99283-8880</a>
+                            <i class="fa-brands fa-whatsapp contact-icon"></i>
+                            <a href="https://wa.me/5567992838880" target="_blank" rel="noopener noreferrer">(67) 99283-8880</a>
                         </li>
                         <li class="contact-item">
-                            <i class="fa-brands fa-instagram contact-icon" style="font-size: 16px; margin-top: 3px;"></i>
-                            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer" style="color: inherit;">@baultengenharia</a>
+                            <i class="fa-brands fa-instagram contact-icon"></i>
+                            <a href="https://instagram.com/baultengenharia" target="_blank" rel="noopener noreferrer">@baultengenharia</a>
                         </li>
                         <li class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <span>Campo Grande, MS | Todo o Estado</span>
+                            <i class="fa-solid fa-location-dot contact-icon"></i>
+                            <span>Campo Grande, MS | Atendimento Estadual</span>
                         </li>
                     </ul>
-                </div>
-
-                <div class="footer-col form-col fade-in-up" style="animation-delay: 300ms;">
-                    <h4 class="footer-title">Fale Conosco</h4>
-                    <form class="footer-contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Nome Completo</label>
-                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="sr-only">E-mail</label>
-                            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Mensagem</label>
-                            <textarea id="message" name="message" placeholder="Descreva o serviço que precisa..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                        <div class="form-feedback" id="formFeedback"></div>
-                    </form>
                 </div>
             </div>
 
+            <!-- Direitos Autorais, CREA e Dados da Empresa -->
             <div class="footer-bottom text-center">
-                <p class="copyright-text">© 2026 Bault Engenharia. Todos os direitos reservados. | Eng.ª Civil Camila Baltuilhe Vargas do Nascimento | CREA-MS 66082</p>
+                <p class="copyright-text">
+                    © 2026 Bault Engenharia. Todos os direitos reservados. | Camila Baltuilhe Vargas do Nascimento LTDA | CNPJ: 47.055.155/0001-99
+                </p>
             </div>
         </div>
     </footer>
@@ -624,8 +712,7 @@
         <i class="fa-brands fa-whatsapp"></i>
         <span class="whatsapp-float-tooltip">Falar no WhatsApp</span>
     </a>
-
-    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="lenis.min.js"></script>
     <script src="script.js"></script>
 
 </body>
