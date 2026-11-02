@@ -1726,12 +1726,32 @@ img {
         min-height: 100svh;
         padding-top: 68px;
         background-color: var(--color-charcoal);
-        background-image: linear-gradient(to bottom, rgba(4, 8, 10, 0.42) 0%, rgba(4, 8, 10, 0.68) 55%, rgba(4, 8, 10, 0.92) 100%), url('img/img_hero.webp');
-        background-position: center center;
-        background-size: cover;
+        background-image: none;
+        position: relative;
         display: flex;
         align-items: center;
         overflow: hidden;
+        z-index: 1;
+    }
+
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url('img/img_hero.webp');
+        background-position: 96% center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+        z-index: -2;
+    }
+
+    .hero-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(4, 8, 10, 0.44) 0%, rgba(4, 8, 10, 0.68) 55%, rgba(4, 8, 10, 0.92) 100%);
+        z-index: -1;
     }
 
     .hero-container {
