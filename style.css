@@ -362,8 +362,9 @@ img {
     color: var(--color-offwhite);
 }
 
-.mobile-link:hover {
-    color: var(--color-taupe);
+.mobile-link:hover,
+.mobile-link.active {
+    color: var(--color-accent) !important;
 }
 
 .hero-section {

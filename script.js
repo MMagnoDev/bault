@@ -83,9 +83,77 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuBtn) menuBtn.addEventListener("click", openMobileMenu);
     if (closeBtn) closeBtn.addEventListener("click", closeMobileMenu);
     
+    function setActiveMobileLink(targetHref) {
+        mobileLinks.forEach(l => {
+            l.style.color = "";
+            const href = l.getAttribute("href");
+            if (href === targetHref || href === "index.html" + targetHref) {
+                l.classList.add("active");
+            } else {
+                l.classList.remove("active");
+            }
+        });
+    }
+
     mobileLinks.forEach(link => {
-        link.addEventListener("click", closeMobileMenu);
+        link.addEventListener("click", () => {
+            const href = link.getAttribute("href");
+            if (href && href.startsWith("#")) {
+                setActiveMobileLink(href);
+            } else if (href === "index.html") {
+                setActiveMobileLink("index.html");
+            }
+            closeMobileMenu();
+        });
     });
+
+    // Atualiza item marcado no menu mobile conforme a seção visível ou hash da URL na Home
+    const homeSections = [
+        { id: "publico", href: "#publico" },
+        { id: "atuacao", href: "#atuacao" },
+        { id: "entregamos", href: "#entregamos" }
+    ];
+
+    if (document.getElementById("publico")) {
+        let clickedHashLock = false;
+
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                const href = link.getAttribute("href");
+                if (href && href.startsWith("#")) {
+                    clickedHashLock = true;
+                    setActiveMobileLink(href);
+                    setTimeout(() => { clickedHashLock = false; }, 1000);
+                }
+            });
+        });
+
+        const updateMobileSpy = () => {
+            if (clickedHashLock) return;
+            const scrollPos = window.scrollY + window.innerHeight * 0.35;
+            let matched = "index.html";
+
+            for (const sec of homeSections) {
+                const el = document.getElementById(sec.id);
+                if (el) {
+                    const top = el.offsetTop;
+                    const bottom = top + el.offsetHeight;
+                    if (scrollPos >= top && scrollPos < bottom) {
+                        matched = sec.href;
+                        break;
+                    }
+                }
+            }
+            setActiveMobileLink(matched);
+        };
+
+        window.addEventListener("scroll", updateMobileSpy, { passive: true });
+        if (window.location.hash) {
+            setActiveMobileLink(window.location.hash);
+        } else {
+            updateMobileSpy();
+        }
+    }
 
     /* ==========================================================================
        FILTRO DE PROJETOS
