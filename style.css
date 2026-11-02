@@ -368,7 +368,7 @@ img {
 
 .hero-section {
     background-color: var(--color-charcoal);
-    background-image: linear-gradient(to right, rgba(4, 8, 10, 0.94) 0%, rgba(4, 8, 10, 0.82) 50%, rgba(4, 8, 10, 0.45) 100%), url('img/img_hero.png');
+    background-image: linear-gradient(to right, rgba(4, 8, 10, 0.94) 0%, rgba(4, 8, 10, 0.82) 50%, rgba(4, 8, 10, 0.45) 100%), url('img/img_hero.webp');
     background-size: cover;
     background-position: center right;
     padding-top: 0;
@@ -1726,7 +1726,7 @@ img {
         min-height: 100svh;
         padding-top: 68px;
         background-color: var(--color-charcoal);
-        background-image: linear-gradient(to bottom, rgba(4, 8, 10, 0.42) 0%, rgba(4, 8, 10, 0.68) 55%, rgba(4, 8, 10, 0.92) 100%), url('img/img_hero.png');
+        background-image: linear-gradient(to bottom, rgba(4, 8, 10, 0.42) 0%, rgba(4, 8, 10, 0.68) 55%, rgba(4, 8, 10, 0.92) 100%), url('img/img_hero.webp');
         background-position: center center;
         background-size: cover;
         display: flex;
