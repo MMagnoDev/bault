@@ -27,8 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetEl = document.querySelector(targetId);
             if (targetEl) {
                 e.preventDefault();
+                // Garante que o menu mobile feche e libere o scroll (lenis.start / overflow) antes de rolar
+                const panel = document.getElementById("mobilePanel");
+                if (panel && panel.classList.contains("open")) {
+                    panel.classList.remove("open");
+                    panel.setAttribute("aria-hidden", "true");
+                    const mBtn = document.getElementById("menuBtn");
+                    if (mBtn) mBtn.setAttribute("aria-expanded", "false");
+                    document.body.style.overflow = "";
+                    if (lenis) lenis.start();
+                }
+
                 if (lenis) {
-                    lenis.scrollTo(targetEl, { offset: -80 });
+                    lenis.scrollTo(targetEl, { offset: -80, force: true });
                 } else {
                     const top = targetEl.getBoundingClientRect().top + window.scrollY - 80;
                     window.scrollTo({ top, behavior: 'smooth' });
