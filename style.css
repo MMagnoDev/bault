@@ -1740,7 +1740,7 @@ img {
         position: absolute;
         inset: 0;
         background-image: url('img/img_hero.webp');
-        background-position: 96% center;
+        background-position: 103% center;
         background-size: cover;
         background-repeat: no-repeat;
         transform: scaleX(-1);
